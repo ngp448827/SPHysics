@@ -24,14 +24,19 @@
                 <pointmax x="6.5" y="1.1" z="2.2" />
             </definition>
             <commands>
+
+
+
                 <!--Initial boundry geometry-->
                 <mainlist>
                     <setshapemode>real</setshapemode>
                     <setdrawmode mode="full" />
                     <setmkbound mk="1" />
                     <drawpoint x="0" y="0" z="2" />
-                    <!-- 1.2 is outside domain above so changed to 0.75-->
                     <drawpoint x="0" y="0" z="-0.5" />
+
+
+
                     <!-- Wave flap geometry -->
                     <setmkbound mk="10" />
                     <drawbox>
@@ -39,6 +44,8 @@
                         <point x="-0.05" y="-1" z="-0.5" />
                         <size x="0.05" y="2" z="2" />
                     </drawbox>
+
+
                     <!--Tank geometry for box-->
                     <setmkbound mk="0" />
                     <!-- bottom wall-->
@@ -64,6 +71,9 @@
                         <point x="0" y="1" z="-0.5" />
                         <size x="6" y="0.04" z="2" />
                     </drawbox>
+
+
+
                     <!-- SAND: trapezoid prism spanning the full tank width -->
                     <setmkfluid mk="4" />
                     <drawprism mask="0">
@@ -78,9 +88,12 @@
                         <point x="3.20" y="1" z="-0.20" />
                         <point x="2.80" y="1" z="-0.20" />
                     </drawprism>
+
+
+
                     <!-- Water volume: fills full tank length and increased water height to 0.80 m -->
                     <setmkfluid mk="8" />
-                    <fillbox x="0.5" y="0" z="0.0">
+                    <fillbox x="0.5" y="0" z="0.0"> <!--changed z from V8 so it does not over lap sand when filling-->
                         <modefill>void</modefill>
                         <point x="0" y="-1" z="-0.18" />
                         <size x="6.0" y="2" z="1.00" />
@@ -142,6 +155,7 @@
             <parameter key="ShiftCoef" value="-2" comment="Coefficient for shifting computation (default=-2)" />
             <parameter key="ShiftTFS" value="2.75" comment="Threshold to detect free surface. Typically 1.5 for 2D and 2.75 for 3D (default=0)" />
             <parameter key="RigidAlgorithm" value="1" comment="Rigid Algorithm 0:collision-free, 1:SPH, 2:DEM, 3:Chrono (default=1)" />
+            <!-- changed ftpause here so there is a pause before wavegeneration starts-->
             <parameter key="FtPause" value="2.0" comment="Time to freeze the floatings at simulation start (warmup) (default=0)" units_comment="seconds" />
             <parameter key="CoefDtMin" value="0.05" comment="Coefficient to calculate minimum time step dtmin=coefdtmin*h/speedsound (default=0.05)" />
             <parameter key="DtIni" value="0" comment="Initial time step. Use 0 to default use (default=h/speedsound)" units_comment="seconds" />
@@ -184,6 +198,8 @@
             <dp value="0.04" units_comment="metres (m)" />
             <h value="0.083138438763" units_comment="metres (m)" />
             <b value="426034.28571" units_comment="Pascal (Pa)" />
+            <!-- I Think the issue with the sand shooting to the surface 
+                has something to do with all the fluid having the same mass value-->
             <massbound value="0.064" units_comment="kg" />
             <massfluid value="0.064" units_comment="kg" />
         </constants>
