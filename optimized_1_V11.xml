@@ -98,7 +98,7 @@
                 <!-- ================   -->
                 <!-- Water (fluid, mk=1) -->    
                     <setmkfluid mk="1" />
-                    <fillbox x="3" y="0.5" z="0.3" />
+                    <fillbox x="3" y="0.5" z="0.3" >
                         <modefill>fluid</modefill>
                         <point x="0.02" y="0.02" z="0.02" />
                         <size x="5.96" y="0.96" z="0.6" />
@@ -162,7 +162,7 @@
                         comment="Periods of ramp (default=0)" />
 
                     <!-- monitor point at mid-tank depth -->
-                    <savemotion periods="20" periodsteps="20" xpos="6.0" zpos="-0.26" 
+                    <savemotion periods="20" periodsteps="20" xpos="3.0" zpos="-0.3" 
                         comment="Saves motion data. xpos and zpos are optional. zpos=-depth of the measuring point" />
                 </flap>
             </wavepaddles>
@@ -189,7 +189,7 @@
                 comment="Viscosity formulation 1:Artificial, 2:Laminar+SPS, 3:Laminar (default=1)" />
             <parameter key="Visco" value="0.01" 
                 comment="Viscosity value. Typically 0.01 for Artificial and 1e-6 m^2/s (water kinematic viscosity) for Laminar" />
-            <parameter key="ViscoBoundFactor" value="0" 
+            <parameter key="ViscoBoundFactor" value="1" 
                 comment="Multiply viscosity value with boundary (default=1)" />
 
             <!-- Density -->
@@ -246,7 +246,7 @@
             </simulationdomain>
 
         </parameters>
-        
+
         <particles np="8896" nb="8896" nbf="7800" mkboundfirst="10" mkfluidfirst="1">
             <_summary>
                 <positions units_comment="metres (m)">
