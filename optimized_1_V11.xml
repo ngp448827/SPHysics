@@ -259,6 +259,8 @@
             <fixed mkbound="0" mk="10" begin="0" count="7800" />
             <moving mkbound="10" mk="20" begin="7800" count="1096" refmotion="0" />
         </particles>
+
+
         <constants>
             <data2d value="false" />
             <gravity x="0" y="0" z="-9.81" units_comment="m/s^2" />
@@ -271,18 +273,30 @@
             <massbound value="0.008" units_comment="kg" />
             <massfluid value="0.008" units_comment="kg" />
         </constants>
+
+
         <uservars>
             <varnum name="VResId" value="0" />
         </uservars>
+
+        <!--
         <motion>
             <objreal ref="0">
                 <begin mov="1" start="0" />
                 <mvnull id="1" />
             </objreal>
         </motion>
+        -->
+
         <vtkout mkboundfirst="10" mkfluidfirst="1">
-            <vtkfile name="CaseFlapBeach_REG_V1__Dp.vtk" mk="10,20" mkbound="0,10" />
-            <vtkfile name="CaseFlapBeach_REG_V1__Actual.vtk" mk="10,20" mkbound="0,10" />
+            <vtkfile name="optimized_1_V11__Dp.vtk" 
+                mk="10,11,1" 
+                mkbound="0,1" />
+            <vtkfile name="optimized_1_V11__Actual.vtk" 
+                mk="10,11,1" 
+                mkbound="0,1" />
         </vtkout>
+
+
     </execution>
 </case>
