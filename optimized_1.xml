@@ -72,6 +72,7 @@
                     </drawbox>
                     <!-- ================   -->
                     <!-- Water (fluid, mk=1) -->
+                    <setshapemode>real | dp | fluid</setshapemode> 
                     <setmkfluid mk="1" />
                     <fillbox x="3" y="0.5" z="0.3">
                         <modefill>fluid</modefill>
