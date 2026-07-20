@@ -86,30 +86,8 @@
     </casedef>
     <!-- ===EXECUTION=== -->
     <execution>
-        <special>
-            <wavepaddles>
-                <flap>
-                    <mkbound value="10" comment="Mk-Bound of selected particles" />
-                    <waveorder value="2" comment="Order wave generation 1:1st order, 2:2nd order (def=1)" />
-                    <start value="0" comment="Start time (default=0)" />
-                    <duration value="0" comment="Movement duration, Zero is the end of simulation (default=0)" />
-                    <!-- sets hing at bottom (z=0) -->
-                    <depth value="0.6" comment="Water depth (default=0)" />
-                    <variabledraft value="0.0" comment="Position of the wavemaker hinge (above the bottom <0; below the bottom >0) (default=0)" />
-                    <!-- rotation of hinge along Y -->
-                    <flapaxis0 x="0" y="0" z="0.0" comment="chnged from -1 to 0 so it stays within domain of the sim" />
-                    <flapaxis1 x="0" y="1" z="0.0" comment="Point 1 of axis rotation" />
-                    <!-- Wave parameters -->
-                    <waveheight value="0.15" comment="Wave height" />
-                    <waveperiod value="2" comment="Wave period" />
-                    <phase value="0" comment="Initial wave phase in function of PI (default=0)" />
-                    <ramp value="1" comment="Periods of ramp (default=0)" />
-                    <!-- monitor point at mid-tank depth -->
-                    <savemotion periods="20" periodsteps="20" xpos="3.0" zpos="-0.3" comment="Saves motion data. xpos and zpos are optional. zpos=-depth of the measuring point" />
-                </flap>
-            </wavepaddles>
+        <special> 
         </special>
-        
         <motion>
             <objreal ref="10">
                 <begin mov="1" start="0" />
