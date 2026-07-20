@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<case app="GenCase v5.4.354.01 (07-04-2025)" date="16-07-2026 17:17:25">
+<case app="GenCase v5.4.354.01 (07-04-2025)" date="20-07-2026 09:08:47">
     <casedef>
         <!-- ===CONSTANTS=== -->
         <constantsdef>
@@ -72,7 +72,7 @@
                     </drawbox>
                     <!-- ================   -->
                     <!-- Water (fluid, mk=1) -->
-                    <setshapemode>real | dp | fluid</setshapemode> 
+                    <setshapemode>real | dp | fluid</setshapemode>
                     <setmkfluid mk="1" />
                     <fillbox x="3" y="0.5" z="0.3">
                         <modefill>fluid</modefill>
@@ -84,7 +84,6 @@
             </commands>
         </geometry>
     </casedef>
-    
     <!-- ===EXECUTION=== -->
     <execution>
         <special>
@@ -149,16 +148,16 @@
                 <posmax x="default" y="default" z="default + 10%" />
             </simulationdomain>
         </parameters>
-        <particles np="78182" nb="78182" nbf="78182" mkboundfirst="10" mkfluidfirst="1">
+        <particles np="79968" nb="79968" nbf="79968" mkboundfirst="10" mkfluidfirst="1">
             <_summary>
                 <positions units_comment="metres (m)">
                     <posmin x="0" y="0" z="0" />
                     <posmax x="5.98" y="0.98" z="0.98" />
                 </positions>
-                <fixed count="78182" id="0-78181" mkcount="2" mkvalues="20-21" />
+                <fixed count="79968" id="0-79967" mkcount="2" mkvalues="20-21" />
             </_summary>
-            <fixed mkbound="10" mk="20" begin="0" count="2726" />
-            <fixed mkbound="11" mk="21" begin="2726" count="75456" />
+            <fixed mkbound="10" mk="20" begin="0" count="4512" />
+            <fixed mkbound="11" mk="21" begin="4512" count="75456" />
         </particles>
         <constants>
             <data2d value="false" />
@@ -177,8 +176,8 @@
         </uservars>
         <motion />
         <vtkout mkboundfirst="10" mkfluidfirst="1">
-            <vtkfile name="optimized_1_V11__Dp.vtk" mk="20-21" mkbound="10-11" />
-            <vtkfile name="optimized_1_V11__Actual.vtk" mk="20-21" mkbound="10-11" />
+            <vtkfile name="optimized_1__Dp.vtk" mk="20-21" mkbound="10-11" />
+            <vtkfile name="optimized_1__Actual.vtk" mk="20-21" mkbound="10-11" />
         </vtkout>
     </execution>
 </case>
