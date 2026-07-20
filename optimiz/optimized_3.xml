@@ -166,11 +166,11 @@
                 <phase mkfluid="2" >
                     <rho value="1600" />
                     <visco value="0.1" />
-                    <tau_yield value="50.0" />
+                    <tau_yield value="2" />
                     <HBP_m value="0.5" /> 
-                    <HBP_n value="0.5" />
+                    <HBP_n value="2" />
                 </phase> 
-                
+
             </nnfluid>
         </special>
         <parameters>
