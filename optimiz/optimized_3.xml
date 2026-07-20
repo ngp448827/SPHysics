@@ -93,7 +93,7 @@
                     <drawbox>
                         <boxfill>solid</boxfill>
                         <point x="0.04" y="0.04" z="0.04" />
-                        <size x="5.92" y="0.92" z="0.56" />
+                        <size  x="5.92" y="0.92" z="0.92" /> 
                     </drawbox>
 
                     <!--  ================   -->
@@ -103,8 +103,8 @@
                     <setmkfluid mk="2" />
                     <drawbox>
                         <boxfill>solid</boxfill>
-                        <point x="0.04" y="0.04" z="0.04" />
-                        <size x="5.92" y="0.92" z="0.56" />
+                        <point x="2.013" y="0.04" z="0.04" />
+                        <size  x="3.947" y="0.92" z="0.10" />
                     </drawbox>
 
                     <shapeout file="" reset="true" />
@@ -125,6 +125,8 @@
     <!-- ===EXECUTION=== -->
     <execution>
         <special>
+
+        <!-- Wave paddle motion -->
             <wavepaddles>
                 <flap>
                     <mkbound value="10" comment="Mk-Bound of selected particles" />
@@ -146,6 +148,30 @@
                     <savemotion periods="20" periodsteps="20" xpos="3.0" zpos="-0.3" comment="Saves motion data. xpos and zpos are optional. zpos=-depth of the measuring point" />
                 </flap>
             </wavepaddles>
+        
+        <!--  NON-Newtonian parameters (for water and sand)-->
+            <nnfluid>
+                <viscomodel value="HerschelBulkley" />
+
+                <!-- Water (mk=1) -->
+                <phase mkfluid="1" >  
+                    <rho value="1000" />
+                    <visco value="1e-6" />
+                    <tau_yield value="0.0" />
+                    <HBP_m value="1.0" /> 
+                    <HBP_n value="1.0" /> 
+                </phase>
+
+                <!-- Sand (mk=2) -->
+                <phase mkfluid="2" >
+                    <rho value="1600" />
+                    <visco value="0.1" />
+                    <tau_yield value="50.0" />
+                    <HBP_m value="0.5" /> 
+                    <HBP_n value="0.5" />
+                </phase> 
+                
+            </nnfluid>
         </special>
         <parameters>
             <parameter key="SavePosDouble" value="0" comment="Saves particle position using double precision (default=0)" />
