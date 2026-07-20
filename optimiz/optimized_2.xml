@@ -83,6 +83,8 @@
                 </mainlist>
             </commands>
         </geometry>
+
+        <!-- Motion block for wave paddle -->
         <motion>
             <objreal ref="10">
                 <begin mov="1" start="0" />
@@ -90,6 +92,8 @@
             </objreal>
         </motion>
     </casedef>
+
+
     <!-- ===EXECUTION=== -->
     <execution>
         <special>
