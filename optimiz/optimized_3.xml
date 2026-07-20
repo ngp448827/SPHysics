@@ -14,13 +14,22 @@
             <coefh value="1.2" comment="Coefficient to calculate the smoothing length (h=coefh*sqrt(3*dp^2) in 3D)" />
             <cflnumber value="0.2" comment="Coefficient to multiply dt" />
         </constantsdef>
+
+
         <!-- ===== MK CONFIG =====                    -->
         <!-- mk=10: Flap wavemaker (moving boundary)  -->
         <!-- mk=11: Tank walls/floor (fixed boundary) -->
         <!-- mk=1:  Fluid (water)                     -->
-        <mkconfig boundcount="2" fluidcount="1">
+        <!-- mk=2:  Fluid (sand)                      -->
+        <mkconfig boundcount="2" fluidcount="2">
+            <mkorientbound mk="10" orient="Xyz" />
+            <mkorientbound mk="11" orient="Xyz" />
+
             <mkorientfluid mk="1" orient="Xyz" />
+            <mkorientfluid mk="2" orient="Xyz" />
         </mkconfig>
+
+
         <!-- ===== GEOMETRY: Square Prism Tank ===== -->
         <!-- Tank: 6m long, 1m wide, 1m tall         -->
         <!-- Water depth: 0.6m                       -->
@@ -33,8 +42,11 @@
             </definition>
             <commands>
                 <mainlist>
+
                     <setshapemode>real | dp | bound</setshapemode>
                     <setdrawmode mode="full" />
+
+
                     <!-- Flap wavemaker (moving boundary, mk=10) -->
                     <setmkbound mk="10" />
                     <drawbox>
@@ -43,7 +55,9 @@
                         <size x="0.02" y="1" z="1" />
                         <!-- thin plate at x=0 that spans full width and water depth-->
                     </drawbox>
+
                     <!-- ================   -->
+
                     <!-- Tank bounds (fixed boundary, mk=11) -->
                     <setmkbound mk="11" />
                     <!-- Floor -->
@@ -70,7 +84,9 @@
                         <point x="0" y="0.98" z="0" />
                         <size x="6" y="0.02" z="1" />
                     </drawbox>
+
                     <!-- ================   -->
+
                     <!-- Water (fluid, mk=1) -->
                     <setshapemode>real | dp | fluid</setshapemode>
                     <setmkfluid mk="1" />
@@ -79,6 +95,18 @@
                         <point x="0.04" y="0.04" z="0.04" />
                         <size x="5.92" y="0.92" z="0.56" />
                     </drawbox>
+
+                    <!--  ================   -->
+
+                    <!-- Sand (fluid, mk=2) -->
+                    <setshapemode>real | dp | fluid</setshapemode>
+                    <setmkfluid mk="2" />
+                    <drawbox>
+                        <boxfill>solid</boxfill>
+                        <point x="0.04" y="0.04" z="0.04" />
+                        <size x="5.92" y="0.92" z="0.56" />
+                    </drawbox>
+
                     <shapeout file="" reset="true" />
                 </mainlist>
             </commands>
