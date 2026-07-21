@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<case app="GenCase v5.4.354.01 (07-04-2025)" date="21-07-2026 15:13:52">
+<case app="GenCase v5.4.354.01 (07-04-2025)" date="21-07-2026 15:25:38">
     <casedef>
         <!-- ===CONSTANTS=== -->
         <constantsdef>
@@ -73,7 +73,7 @@
                     <fillbox x="1.0" y="0.5" z="0.3">
                         <modefill>void</modefill>
                         <point x="0.04" y="0.04" z="0.04" />
-                        <size x="5.92" y="0.92" z="0.58" />
+                        <size x="5.92" y="0.92" z="0.62" />
                     </fillbox>
                     <shapeout file="" reset="true" />
                 </mainlist>
@@ -164,7 +164,7 @@
                 <posmax x="default" y="default" z="default + 10%" />
             </simulationdomain>
         </parameters>
-        <particles np="389836" nb="19900" nbf="17450" mkboundfirst="3" mkfluidfirst="1">
+        <particles np="403111" nb="19900" nbf="17450" mkboundfirst="3" mkfluidfirst="1">
             <_summary>
                 <positions units_comment="metres (m)">
                     <posmin x="0" y="0" z="0" />
@@ -172,12 +172,12 @@
                 </positions>
                 <fixed count="17450" id="0-17449" mkcount="1" mkvalues="4" />
                 <moving count="2450" id="17450-19899" mkcount="1" mkvalues="3" />
-                <fluid count="369936" id="19900-389835" mkcount="2" mkvalues="1-2" />
+                <fluid count="383211" id="19900-403110" mkcount="2" mkvalues="1-2" />
             </_summary>
             <fixed mkbound="1" mk="4" begin="0" count="17450" />
             <moving mkbound="0" mk="3" begin="17450" count="2450" refmotion="0" />
-            <fluid mkfluid="0" mk="1" begin="19900" count="314100" />
-            <fluid mkfluid="1" mk="2" begin="334000" count="55836" />
+            <fluid mkfluid="0" mk="1" begin="19900" count="327375" />
+            <fluid mkfluid="1" mk="2" begin="347275" count="55836" />
         </particles>
         <constants>
             <data2d value="false" />
@@ -187,7 +187,7 @@
             <rhop0 value="1000" units_comment="kg/m^3" />
             <dp value="0.02" units_comment="metres (m)" />
             <h value="0.041569219382" units_comment="metres (m)" />
-            <b value="302708.57143" units_comment="Pascal (Pa)" />
+            <b value="313920" units_comment="Pascal (Pa)" />
             <massbound value="0.008" units_comment="kg" />
             <massfluid value="0.008" units_comment="kg" />
         </constants>
