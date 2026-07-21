@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<case app="GenCase v5.4.354.01 (07-04-2025)" date="20-07-2026 10:25:06">
+<case app="GenCase v5.4.354.01 (07-04-2025)" date="21-07-2026 12:24:08">
     <casedef>
         <!-- ===CONSTANTS=== -->
         <constantsdef>
@@ -14,8 +14,6 @@
             <coefh value="1.2" comment="Coefficient to calculate the smoothing length (h=coefh*sqrt(3*dp^2) in 3D)" />
             <cflnumber value="0.2" comment="Coefficient to multiply dt" />
         </constantsdef>
-
-
         <!-- ===== MK CONFIG =====                    -->
         <!-- mk=0: Flap wavemaker (moving boundary)  -->
         <!-- mk=1: Tank walls/floor (fixed boundary) -->
@@ -24,12 +22,9 @@
         <mkconfig boundcount="2" fluidcount="2">
             <mkorientbound mk="0" orient="Xyz" />
             <mkorientbound mk="1" orient="Xyz" />
-
             <mkorientfluid mk="0" orient="Xyz" />
             <mkorientfluid mk="1" orient="Xyz" />
         </mkconfig>
-
-
         <!-- ===== GEOMETRY: Square Prism Tank ===== -->
         <!-- Tank: 6m long, 1m wide, 1m tall         -->
         <!-- Water depth: 0.6m                       -->
@@ -42,11 +37,8 @@
             </definition>
             <commands>
                 <mainlist>
-
                     <setshapemode>real | dp | bound</setshapemode>
                     <setdrawmode mode="full" />
-
-
                     <!-- Flap wavemaker (moving boundary, mk=0) -->
                     <setmkbound mk="0" />
                     <drawbox>
@@ -55,9 +47,7 @@
                         <size x="0.02" y="1" z="1" />
                         <!-- thin plate at x=0 that spans full width and water depth-->
                     </drawbox>
-
                     <!-- ================   -->
-
                     <!-- Tank bounds (fixed boundary, mk=1) -->
                     <setmkbound mk="1" />
                     <!-- Floor -->
@@ -84,34 +74,28 @@
                         <point x="0" y="0.98" z="0" />
                         <size x="6" y="0.02" z="1" />
                     </drawbox>
-
                     <!-- ================   -->
-
                     <!-- Water (fluid, mk=1) -->
                     <setshapemode>real | dp | fluid</setshapemode>
                     <setmkfluid mk="0" />
                     <drawbox>
                         <boxfill>solid</boxfill>
                         <point x="0.04" y="0.04" z="0.04" />
-                        <size  x="5.92" y="0.92" z="0.92" /> 
+                        <size x="5.92" y="0.92" z="0.92" />
                     </drawbox>
-
                     <!--  ================   -->
-
                     <!-- Sand (fluid, mk=2) -->
                     <setshapemode>real | dp | fluid</setshapemode>
                     <setmkfluid mk="1" />
                     <drawbox>
                         <boxfill>solid</boxfill>
                         <point x="2.013" y="0.04" z="0.04" />
-                        <size  x="3.947" y="0.92" z="0.10" />
+                        <size x="3.947" y="0.92" z="0.10" />
                     </drawbox>
-
                     <shapeout file="" reset="true" />
                 </mainlist>
             </commands>
         </geometry>
-
         <!-- Motion block for wave paddle -->
         <motion>
             <objreal ref="0">
@@ -120,13 +104,10 @@
             </objreal>
         </motion>
     </casedef>
-
-
     <!-- ===EXECUTION=== -->
     <execution>
         <special>
-
-        <!-- Wave paddle motion -->
+            <!-- Wave paddle motion -->
             <wavepaddles>
                 <flap>
                     <mkbound value="0" comment="Mk-Bound of selected particles" />
@@ -148,29 +129,25 @@
                     <savemotion periods="20" periodsteps="20" xpos="3.0" zpos="-0.3" comment="Saves motion data. xpos and zpos are optional. zpos=-depth of the measuring point" />
                 </flap>
             </wavepaddles>
-        
-        <!--  NON-Newtonian parameters (for water and sand)-->
+            <!--  NON-Newtonian parameters (for water and sand)-->
             <nnfluid>
                 <viscomodel value="HerschelBulkley" />
-
                 <!-- Water (mk=0) -->
-                <phase mkfluid="0" >  
+                <phase mkfluid="0">
                     <rho value="1000" />
                     <visco value="1e-6" />
                     <tau_yield value="0.0" />
-                    <HBP_m value="1.0" /> 
-                    <HBP_n value="1.0" /> 
+                    <HBP_m value="1.0" />
+                    <HBP_n value="1.0" />
                 </phase>
-
                 <!-- Sand (mk=1) -->
-                <phase mkfluid="1" >
+                <phase mkfluid="1">
                     <rho value="1600" />
                     <visco value="0.1" />
                     <tau_yield value="2" />
-                    <HBP_m value="0.5" /> 
+                    <HBP_m value="0.5" />
                     <HBP_n value="2" />
-                </phase> 
-
+                </phase>
             </nnfluid>
         </special>
         <parameters>
@@ -204,19 +181,20 @@
                 <posmax x="default" y="default" z="default + 10%" />
             </simulationdomain>
         </parameters>
-        <particles np="484779" nb="79968" nbf="75456" mkboundfirst="10" mkfluidfirst="1">
+        <particles np="736041" nb="79968" nbf="75456" mkboundfirst="3" mkfluidfirst="1">
             <_summary>
                 <positions units_comment="metres (m)">
                     <posmin x="0" y="0" z="0" />
                     <posmax x="5.98" y="0.98" z="0.98" />
                 </positions>
-                <fixed count="75456" id="0-75455" mkcount="1" mkvalues="21" />
-                <moving count="4512" id="75456-79967" mkcount="1" mkvalues="20" />
-                <fluid count="404811" id="79968-484778" mkcount="1" mkvalues="2" />
+                <fixed count="75456" id="0-75455" mkcount="1" mkvalues="4" />
+                <moving count="4512" id="75456-79967" mkcount="1" mkvalues="3" />
+                <fluid count="656073" id="79968-736040" mkcount="2" mkvalues="1-2" />
             </_summary>
-            <fixed mkbound="11" mk="21" begin="0" count="75456" />
-            <moving mkbound="10" mk="20" begin="75456" count="4512" refmotion="0" />
-            <fluid mkfluid="1" mk="2" begin="79968" count="404811" />
+            <fixed mkbound="1" mk="4" begin="0" count="75456" />
+            <moving mkbound="0" mk="3" begin="75456" count="4512" refmotion="0" />
+            <fluid mkfluid="0" mk="1" begin="79968" count="600237" />
+            <fluid mkfluid="1" mk="2" begin="680205" count="55836" />
         </particles>
         <constants>
             <data2d value="false" />
@@ -226,7 +204,7 @@
             <rhop0 value="1000" units_comment="kg/m^3" />
             <dp value="0.02" units_comment="metres (m)" />
             <h value="0.041569219382" units_comment="metres (m)" />
-            <b value="313920" units_comment="Pascal (Pa)" />
+            <b value="515725.71429" units_comment="Pascal (Pa)" />
             <massbound value="0.008" units_comment="kg" />
             <massfluid value="0.008" units_comment="kg" />
         </constants>
@@ -239,9 +217,9 @@
                 <mvnull id="1" />
             </objreal>
         </motion>
-        <vtkout mkboundfirst="0" mkfluidfirst="1">
-            <vtkfile name="optimized_2__Dp.vtk" mk="2,20-21" mkbound="10-11" mkfluid="1" />
-            <vtkfile name="optimized_2__Actual.vtk" mk="2,20-21" mkbound="10-11" mkfluid="1" />
+        <vtkout mkboundfirst="3" mkfluidfirst="1">
+            <vtkfile name="sand__Dp.vtk" mk="1-4" mkbound="0-1" mkfluid="0-1" />
+            <vtkfile name="sand__Actual.vtk" mk="1-4" mkbound="0-1" mkfluid="0-1" />
         </vtkout>
     </execution>
 </case>
