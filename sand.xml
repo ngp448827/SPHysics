@@ -129,7 +129,7 @@
         <!-- Wave paddle motion -->
             <wavepaddles>
                 <flap>
-                    <mkbound value="10" comment="Mk-Bound of selected particles" />
+                    <mkbound value="9" comment="Mk-Bound of selected particles" />
                     <waveorder value="2" comment="Order wave generation 1:1st order, 2:2nd order (def=1)" />
                     <start value="0" comment="Start time (default=0)" />
                     <duration value="0" comment="Movement duration, Zero is the end of simulation (default=0)" />
@@ -153,8 +153,8 @@
             <nnfluid>
                 <viscomodel value="HerschelBulkley" />
 
-                <!-- Water (mk=1) -->
-                <phase mkfluid="1" >  
+                <!-- Water (mk=0) -->
+                <phase mkfluid="0" >  
                     <rho value="1000" />
                     <visco value="1e-6" />
                     <tau_yield value="0.0" />
@@ -162,8 +162,8 @@
                     <HBP_n value="1.0" /> 
                 </phase>
 
-                <!-- Sand (mk=2) -->
-                <phase mkfluid="2" >
+                <!-- Sand (mk=1) -->
+                <phase mkfluid="1" >
                     <rho value="1600" />
                     <visco value="0.1" />
                     <tau_yield value="2" />
