@@ -17,16 +17,16 @@
 
 
         <!-- ===== MK CONFIG =====                    -->
-        <!-- mk=10: Flap wavemaker (moving boundary)  -->
-        <!-- mk=11: Tank walls/floor (fixed boundary) -->
-        <!-- mk=1:  Fluid (water)                     -->
-        <!-- mk=2:  Fluid (sand)                      -->
+        <!-- mk=9: Flap wavemaker (moving boundary)  -->
+        <!-- mk=8: Tank walls/floor (fixed boundary) -->
+        <!-- mk=0:  Fluid (water)                     -->
+        <!-- mk=1:  Fluid (sand)                      -->
         <mkconfig boundcount="2" fluidcount="2">
-            <mkorientbound mk="10" orient="Xyz" />
-            <mkorientbound mk="11" orient="Xyz" />
+            <mkorientbound mk="9" orient="Xyz" />
+            <mkorientbound mk="8" orient="Xyz" />
 
+            <mkorientfluid mk="0" orient="Xyz" />
             <mkorientfluid mk="1" orient="Xyz" />
-            <mkorientfluid mk="2" orient="Xyz" />
         </mkconfig>
 
 
@@ -47,8 +47,8 @@
                     <setdrawmode mode="full" />
 
 
-                    <!-- Flap wavemaker (moving boundary, mk=10) -->
-                    <setmkbound mk="10" />
+                    <!-- Flap wavemaker (moving boundary, mk=9) -->
+                    <setmkbound mk="9" />
                     <drawbox>
                         <boxfill>solid</boxfill>
                         <point x="0" y="0" z="0" />
@@ -58,8 +58,8 @@
 
                     <!-- ================   -->
 
-                    <!-- Tank bounds (fixed boundary, mk=11) -->
-                    <setmkbound mk="11" />
+                    <!-- Tank bounds (fixed boundary, mk=8) -->
+                    <setmkbound mk="8" />
                     <!-- Floor -->
                     <drawbox>
                         <boxfill>solid</boxfill>
@@ -89,7 +89,7 @@
 
                     <!-- Water (fluid, mk=1) -->
                     <setshapemode>real | dp | fluid</setshapemode>
-                    <setmkfluid mk="1" />
+                    <setmkfluid mk="0" />
                     <drawbox>
                         <boxfill>solid</boxfill>
                         <point x="0.04" y="0.04" z="0.04" />
@@ -100,7 +100,7 @@
 
                     <!-- Sand (fluid, mk=2) -->
                     <setshapemode>real | dp | fluid</setshapemode>
-                    <setmkfluid mk="2" />
+                    <setmkfluid mk="1" />
                     <drawbox>
                         <boxfill>solid</boxfill>
                         <point x="2.013" y="0.04" z="0.04" />
@@ -114,7 +114,7 @@
 
         <!-- Motion block for wave paddle -->
         <motion>
-            <objreal ref="10">
+            <objreal ref="9">
                 <begin mov="1" start="0" />
                 <mvnull id="1" />
             </objreal>
