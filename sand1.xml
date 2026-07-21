@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<case app="GenCase v5.4.354.01 (07-04-2025)" date="21-07-2026 12:24:08">
+<case app="GenCase v5.4.354.01 (07-04-2025)" date="21-07-2026 15:13:52">
     <casedef>
         <!-- ===CONSTANTS=== -->
         <constantsdef>
@@ -47,8 +47,6 @@
                         <size x="0.02" y="1" z="1" />
                         <!-- thin plate at x=0 that spans full width and water depth-->
                     </drawbox>
-
-
                     <!-- ================   -->
                     <!-- Tank bounds (fixed boundary, mk=1) -->
                     <!-- Tank size 6m x 1m x 1m -->
@@ -59,7 +57,6 @@
                         <point x="0" y="0" z="0" />
                         <size x="6" y="1" z="1" />
                     </drawbox>
-
                     <!--  ================   -->
                     <!-- Sand (fluid, mk=1) -->
                     <setshapemode>real | dp | fluid</setshapemode>
@@ -69,7 +66,6 @@
                         <point x="2.013" y="0.04" z="0.04" />
                         <size x="3.947" y="0.92" z="0.10" />
                     </drawbox>
-
                     <!-- ================   -->
                     <!-- Water (fluid, mk=0) -->
                     <setshapemode>real | dp | fluid</setshapemode>
@@ -77,10 +73,8 @@
                     <fillbox x="1.0" y="0.5" z="0.3">
                         <modefill>void</modefill>
                         <point x="0.04" y="0.04" z="0.04" />
-                        <size x="5.92" y="0.92" z="0.56" />
+                        <size x="5.92" y="0.92" z="0.58" />
                     </fillbox>
-
-
                     <shapeout file="" reset="true" />
                 </mainlist>
             </commands>
@@ -170,20 +164,20 @@
                 <posmax x="default" y="default" z="default + 10%" />
             </simulationdomain>
         </parameters>
-        <particles np="736041" nb="79968" nbf="75456" mkboundfirst="3" mkfluidfirst="1">
+        <particles np="389836" nb="19900" nbf="17450" mkboundfirst="3" mkfluidfirst="1">
             <_summary>
                 <positions units_comment="metres (m)">
                     <posmin x="0" y="0" z="0" />
                     <posmax x="5.98" y="0.98" z="0.98" />
                 </positions>
-                <fixed count="75456" id="0-75455" mkcount="1" mkvalues="4" />
-                <moving count="4512" id="75456-79967" mkcount="1" mkvalues="3" />
-                <fluid count="656073" id="79968-736040" mkcount="2" mkvalues="1-2" />
+                <fixed count="17450" id="0-17449" mkcount="1" mkvalues="4" />
+                <moving count="2450" id="17450-19899" mkcount="1" mkvalues="3" />
+                <fluid count="369936" id="19900-389835" mkcount="2" mkvalues="1-2" />
             </_summary>
-            <fixed mkbound="1" mk="4" begin="0" count="75456" />
-            <moving mkbound="0" mk="3" begin="75456" count="4512" refmotion="0" />
-            <fluid mkfluid="0" mk="1" begin="79968" count="600237" />
-            <fluid mkfluid="1" mk="2" begin="680205" count="55836" />
+            <fixed mkbound="1" mk="4" begin="0" count="17450" />
+            <moving mkbound="0" mk="3" begin="17450" count="2450" refmotion="0" />
+            <fluid mkfluid="0" mk="1" begin="19900" count="314100" />
+            <fluid mkfluid="1" mk="2" begin="334000" count="55836" />
         </particles>
         <constants>
             <data2d value="false" />
@@ -193,7 +187,7 @@
             <rhop0 value="1000" units_comment="kg/m^3" />
             <dp value="0.02" units_comment="metres (m)" />
             <h value="0.041569219382" units_comment="metres (m)" />
-            <b value="515725.71429" units_comment="Pascal (Pa)" />
+            <b value="302708.57143" units_comment="Pascal (Pa)" />
             <massbound value="0.008" units_comment="kg" />
             <massfluid value="0.008" units_comment="kg" />
         </constants>
@@ -207,8 +201,8 @@
             </objreal>
         </motion>
         <vtkout mkboundfirst="3" mkfluidfirst="1">
-            <vtkfile name="sand__Dp.vtk" mk="1-4" mkbound="0-1" mkfluid="0-1" />
-            <vtkfile name="sand__Actual.vtk" mk="1-4" mkbound="0-1" mkfluid="0-1" />
+            <vtkfile name="sand1__Dp.vtk" mk="2-4" mkbound="0-1" mkfluid="1" />
+            <vtkfile name="sand1__Actual.vtk" mk="2-4" mkbound="0-1" mkfluid="1" />
         </vtkout>
     </execution>
 </case>
