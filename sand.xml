@@ -17,13 +17,13 @@
 
 
         <!-- ===== MK CONFIG =====                    -->
-        <!-- mk=9: Flap wavemaker (moving boundary)  -->
-        <!-- mk=8: Tank walls/floor (fixed boundary) -->
+        <!-- mk=0: Flap wavemaker (moving boundary)  -->
+        <!-- mk=1: Tank walls/floor (fixed boundary) -->
         <!-- mk=0:  Fluid (water)                     -->
         <!-- mk=1:  Fluid (sand)                      -->
         <mkconfig boundcount="2" fluidcount="2">
-            <mkorientbound mk="9" orient="Xyz" />
-            <mkorientbound mk="8" orient="Xyz" />
+            <mkorientbound mk="0" orient="Xyz" />
+            <mkorientbound mk="1" orient="Xyz" />
 
             <mkorientfluid mk="0" orient="Xyz" />
             <mkorientfluid mk="1" orient="Xyz" />
@@ -47,8 +47,8 @@
                     <setdrawmode mode="full" />
 
 
-                    <!-- Flap wavemaker (moving boundary, mk=9) -->
-                    <setmkbound mk="9" />
+                    <!-- Flap wavemaker (moving boundary, mk=0) -->
+                    <setmkbound mk="0" />
                     <drawbox>
                         <boxfill>solid</boxfill>
                         <point x="0" y="0" z="0" />
@@ -58,8 +58,8 @@
 
                     <!-- ================   -->
 
-                    <!-- Tank bounds (fixed boundary, mk=8) -->
-                    <setmkbound mk="8" />
+                    <!-- Tank bounds (fixed boundary, mk=1) -->
+                    <setmkbound mk="1" />
                     <!-- Floor -->
                     <drawbox>
                         <boxfill>solid</boxfill>
@@ -114,7 +114,7 @@
 
         <!-- Motion block for wave paddle -->
         <motion>
-            <objreal ref="9">
+            <objreal ref="0">
                 <begin mov="1" start="0" />
                 <mvnull id="1" />
             </objreal>
@@ -129,7 +129,7 @@
         <!-- Wave paddle motion -->
             <wavepaddles>
                 <flap>
-                    <mkbound value="9" comment="Mk-Bound of selected particles" />
+                    <mkbound value="0" comment="Mk-Bound of selected particles" />
                     <waveorder value="2" comment="Order wave generation 1:1st order, 2:2nd order (def=1)" />
                     <start value="0" comment="Start time (default=0)" />
                     <duration value="0" comment="Movement duration, Zero is the end of simulation (default=0)" />
@@ -234,12 +234,12 @@
             <varnum name="VResId" value="0" />
         </uservars>
         <motion>
-            <objreal ref="10">
+            <objreal ref="0">
                 <begin mov="1" start="0" />
                 <mvnull id="1" />
             </objreal>
         </motion>
-        <vtkout mkboundfirst="10" mkfluidfirst="1">
+        <vtkout mkboundfirst="0" mkfluidfirst="1">
             <vtkfile name="optimized_2__Dp.vtk" mk="2,20-21" mkbound="10-11" mkfluid="1" />
             <vtkfile name="optimized_2__Actual.vtk" mk="2,20-21" mkbound="10-11" mkfluid="1" />
         </vtkout>
