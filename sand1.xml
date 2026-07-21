@@ -73,7 +73,7 @@
                     <fillbox x="1.0" y="0.5" z="0.3">
                         <modefill>void</modefill>
                         <point x="0.04" y="0.04" z="0.04" />
-                        <size x="5.92" y="0.92" z="0.62" />
+                        <size x="5.92" y="0.92" z="0.62" /> <!-- note that with fillbox, gencase registers depth as z-dp -->
                     </fillbox>
                     <shapeout file="" reset="true" />
                 </mainlist>
