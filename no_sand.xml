@@ -107,8 +107,8 @@
                     <depth value="0.6" comment="Water depth (default=0)" />
                     <variabledraft value="0.0" comment="Position of the wavemaker hinge (above the bottom <0; below the bottom >0) (default=0)" />
                     <!-- rotation of hinge along Y -->
-                    <flapaxis0 x="0" y="0" z="0.0" comment="chnged from -1 to 0 so it stays within domain of the sim" />
-                    <flapaxis1 x="0" y="1" z="0.0" comment="Point 1 of axis rotation" />
+                    <flapaxis0 x="0.05" y="0" z="0.0" comment="chnged from -1 to 0 so it stays within domain of the sim" />
+                    <flapaxis1 x="0.05" y="1" z="0.0" comment="Point 1 of axis rotation" />
                     <!-- Wave parameters -->
                     <waveheight value="0.15" comment="Wave height" />
                     <waveperiod value="2" comment="Wave period" />
