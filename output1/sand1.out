@@ -55,12 +55,12 @@ Memory: 0.00 GiB  0.72 MiB  (750,000)
 
 > MAIN
 FileDbgDomains> sand1_dbg-fillbox.vtk  domains:1
-FileShapes> _Dp.vtk  shapes:16  points:24   (time:0.001s)
-FileShapes> _Actual.vtk  shapes:16  points:24   (time:0.001s)
+FileShapes> _Dp.vtk  shapes:16  points:24   (time:0.000s)
+FileShapes> _Actual.vtk  shapes:16  points:24   (time:0.000s)
 <MAIN (Operations= 9+4+1 = 14)
 
 Triangles: 40 (0 ignored)
-[Draw-End  time:0.045s]
+[Draw-End  time:0.085s]
 
 [LoadsXMLConfig]
 Execution parameters.
@@ -71,12 +71,12 @@ Predefined motion configuration.
 [LoadsXMLConfig-End  time:0.000s]
 
 [PreparePoints]
-Computing Vtk-Cells data...  (time:0.029s)
+Computing Vtk-Cells data...  (time:0.027s)
 BitSizeTot: 23 (2 + 9+6+6)
-Points loaded: 389,836
+Points loaded: 429,661
 Sorting points by Z...
 Sorting points by Mk...
-Computing Grid-points...  (time:0.030s)
+Computing Grid-points...  (time:0.018s)
 
 List of Points:
 Points -> Fixed-Boundary particles:
@@ -84,32 +84,32 @@ Points -> Fixed-Boundary particles:
 Points -> Moving-Boundary particles:
   block[  1] (mk:  3):   2450  -->    2450
 Points -> Fluid particles:
-  block[  2] (mk:  1): 314100  -->  314100
+  block[  2] (mk:  1): 353925  -->  353925
   block[  3] (mk:  2):  55836  -->   55836
 
 Particle summary:
   Fixed....: 17,450  id:(0-17449)   MKs:1 (4)
   Moving...: 2,450  id:(17450-19899)   MKs:1 (3)
   Floating.: 0
-  Fluid....: 369,936  id:(19900-389835)   MKs:2 (1-2)
+  Fluid....: 409,761  id:(19900-429660)   MKs:2 (1-2)
 
-Total particles: 389,836 (bound=19900 (fx=17450 mv=2450 ft=0) fluid=369936)
+Total particles: 429,661 (bound=19900 (fx=17450 mv=2450 ft=0) fluid=409761)
 Total MK blocks: 4 (bound=2 (fx=1 mv=1 ft=0) fluid=2)
 
-Maximum depth: 0.54 (automatic)
-Speed of system: 2.30161 (automatic)
+Maximum depth: 0.6 (automatic)
+Speed of system: 2.42611 (automatic)
 Speed of sound: max(coefsound*speedsystem,10*sqrt(g*depth))
-Speed of sound: 46.0322 max(46.0322,23.0161)
-Speed of sound: 46.0322 (automatic)
+Speed of sound: 48.5222 max(48.5222,24.2611)
+Speed of sound: 48.5222 (automatic)
 
 Coefh:1.200000 (hdp:2.078461)
 
-[PreparePoints-End  time:0.067s]
+[PreparePoints-End  time:0.048s]
 
 [SaveCase3D]
 sand1_MkCells.vtk  (time:0.001s, shapes:32, points:128)
-sand1.bi4<double>  (time:0.008s)
-sand1.xml  (time:0.002s)
+sand1.bi4<double>  (time:0.009s)
+sand1.xml  (time:0.001s)
 
 Save files time: 0.011s
 
@@ -121,7 +121,7 @@ Particle limits:
 [SaveCase3D-End  time:0.030s]
 
 
-Time of execution: 0.146 sec. (12 threads)
+Time of execution: 0.166 sec. (12 threads)
 
 Finished execution (code=0).
 
