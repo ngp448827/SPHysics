@@ -32,23 +32,28 @@
         <geometry>
             <definition dp="0.04">
                 <pointref x="0" y="0" z="0" />
-                <pointmin x="0" y="0" z="0" />
-                <pointmax x="6" y="1" z="1" />
+                <pointmin x="-0.04" y="-0.04" z="-0.04" />
+                <pointmax x="6.04" y="1.04" z="1.04" />
             </definition>
             <commands>
                 <mainlist>
                     <setshapemode>real | dp | bound</setshapemode>
                     <setdrawmode mode="full" />
-                    <!-- Flap wavemaker (moving boundary, mk=0) -->
+                    <!-- ================================================= -->
+                    <!-- Flap wavemaker: thickness changed from 0.02 to 0.04 -->
+                    <!-- Wet face is at x=0; extra thickness extends outward -->
+                    <!-- ================================================= -->
                     <setmkbound mk="0" />
                     <drawbox>
                         <boxfill>solid</boxfill>
-                        <point x="0.02" y="0" z="0" />
-                        <size x="0.02" y="1" z="1" />
-                        <!-- thin plate at x=0 that spans full width and water depth-->
-                    </drawbox>
-                    <!-- ================   -->
-                    <!-- Tank bounds (fixed boundary, mk=1) -->
+                         <point x="-0.04" y="0" z="0" />
+                        <size x="0.04" y="1" z="1" />
+                     </drawbox>
+
+                    <!-- ================================================= -->
+                    <!-- Fixed tank boundaries                              -->
+                    <!-- Boundary thickness extends outside the lab domain -->
+                    <!-- ================================================= -->
                     <setmkbound mk="1" />
                     <!-- Floor -->
                     <drawbox>
