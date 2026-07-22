@@ -15,11 +15,11 @@
             <cflnumber value="0.2" comment="Coefficient to multiply dt" />
         </constantsdef>
         <!-- ===== MK CONFIG =====                    -->
-        <!-- mk=10: Flap wavemaker (moving boundary)  -->
-        <!-- mk=11: Tank walls/floor (fixed boundary) -->
-        <!-- mk=1:  Fluid (water)                     -->
+        <!-- mk=0: Flap wavemaker (moving boundary)  -->
+        <!-- mk=1: Tank walls/floor (fixed boundary) -->
+        <!-- mk=0:  Fluid (water)                     -->
         <mkconfig boundcount="2" fluidcount="1">
-            <mkorientfluid mk="1" orient="Xyz" />
+            <mkorientfluid mk="0" orient="Xyz" />
         </mkconfig>
         <!-- ===== GEOMETRY: Square Prism Tank ===== -->
         <!-- Tank: 6m long, 1m wide, 1m tall         -->
@@ -35,17 +35,17 @@
                 <mainlist>
                     <setshapemode>real | dp | bound</setshapemode>
                     <setdrawmode mode="full" />
-                    <!-- Flap wavemaker (moving boundary, mk=10) -->
-                    <setmkbound mk="10" />
+                    <!-- Flap wavemaker (moving boundary, mk=0) -->
+                    <setmkbound mk="0" />
                     <drawbox>
                         <boxfill>solid</boxfill>
-                        <point x="0" y="0" z="0" />
+                        <point x="0.02" y="0" z="0" />
                         <size x="0.02" y="1" z="1" />
                         <!-- thin plate at x=0 that spans full width and water depth-->
                     </drawbox>
                     <!-- ================   -->
-                    <!-- Tank bounds (fixed boundary, mk=11) -->
-                    <setmkbound mk="11" />
+                    <!-- Tank bounds (fixed boundary, mk=1) -->
+                    <setmkbound mk="1" />
                     <!-- Floor -->
                     <drawbox>
                         <boxfill>solid</boxfill>
@@ -71,9 +71,9 @@
                         <size x="6" y="0.02" z="1" />
                     </drawbox>
                     <!-- ================   -->
-                    <!-- Water (fluid, mk=1) -->
+                    <!-- Water (fluid, mk=0) -->
                     <setshapemode>real | dp | fluid</setshapemode>
-                    <setmkfluid mk="1" />
+                    <setmkfluid mk="0" />
                     <drawbox>
                         <boxfill>solid</boxfill>
                         <point x="0.04" y="0.04" z="0.04" />
@@ -86,7 +86,7 @@
 
         <!-- Motion block for wave paddle -->
         <motion>
-            <objreal ref="10">
+            <objreal ref="0">
                 <begin mov="1" start="0" />
                 <mvnull id="1" />
             </objreal>
@@ -99,7 +99,7 @@
         <special>
             <wavepaddles>
                 <flap>
-                    <mkbound value="10" comment="Mk-Bound of selected particles" />
+                    <mkbound value="0" comment="Mk-Bound of selected particles" />
                     <waveorder value="2" comment="Order wave generation 1:1st order, 2:2nd order (def=1)" />
                     <start value="0" comment="Start time (default=0)" />
                     <duration value="0" comment="Movement duration, Zero is the end of simulation (default=0)" />
@@ -146,7 +146,7 @@
             <parameter key="RhopOutMin" value="700" comment="Minimum rhop valid (default=700)" units_comment="kg/m^3" />
             <parameter key="RhopOutMax" value="1300" comment="Maximum rhop valid (default=1300)" units_comment="kg/m^3" />
             <simulationdomain comment="Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)">
-                <posmin x="default" y="default" z="default" comment="e.g.: x=0.5, y=default-1, z=default-10%" />
+                <posmin x="-0.05" y="default" z="default" comment="e.g.: x=0.5, y=default-1, z=default-10%" />
                 <posmax x="default" y="default" z="default + 10%" />
             </simulationdomain>
         </parameters>
