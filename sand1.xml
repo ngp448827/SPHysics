@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<case app="GenCase v5.4.354.01 (07-04-2025)" date="21-07-2026 15:29:03">
+<case app="GenCase v5.4.354.01 (07-04-2025)" date="22-07-2026 15:34:46">
     <casedef>
         <!-- ===CONSTANTS=== -->
         <constantsdef>
@@ -39,8 +39,6 @@
                 <mainlist>
                     <setshapemode>real | dp | bound</setshapemode>
                     <setdrawmode mode="full" />
-
-
                     <!-- Flap wavemaker (moving boundary, mk=0) -->
                     <setmkbound mk="0" />
                     <drawbox>
@@ -49,8 +47,6 @@
                         <size x="0.02" y="1" z="1" />
                         <!-- thin plate at x=0 that spans full width and water depth-->
                     </drawbox>
-
-
                     <!-- ================   -->
                     <!-- Tank bounds (fixed boundary, mk=1) -->
                     <!-- Tank size 6m x 1m x 1m -->
@@ -61,8 +57,6 @@
                         <point x="0" y="0" z="0" />
                         <size x="6" y="1" z="1" />
                     </drawbox>
-
-
                     <!--  ================   -->
                     <!-- Sand (fluid, mk=1) -->
                     <setshapemode>real | dp | fluid</setshapemode>
@@ -72,8 +66,6 @@
                         <point x="2.02" y="0.04" z="0.04" />
                         <size x="3.94" y="0.92" z="0.10" />
                     </drawbox>
-
-
                     <!-- ================   -->
                     <!-- Water (fluid, mk=0) -->
                     <setshapemode>real | dp | fluid</setshapemode>
@@ -81,7 +73,8 @@
                     <fillbox x="1.0" y="0.5" z="0.3">
                         <modefill>void</modefill>
                         <point x="0.04" y="0.04" z="0.04" />
-                        <size x="5.92" y="0.92" z="0.62" /> <!-- note that with fillbox, gencase registers depth as z-dp -->
+                        <size x="5.92" y="0.92" z="0.62" />
+                        <!-- note that with fillbox, gencase registers depth as z-dp -->
                     </fillbox>
                     <shapeout file="" reset="true" />
                 </mainlist>
@@ -168,24 +161,24 @@
             <parameter key="RhopOutMin" value="700" comment="Minimum rhop valid (default=700)" units_comment="kg/m^3" />
             <parameter key="RhopOutMax" value="1900" comment="Maximum rhop valid (default=1300)" units_comment="kg/m^3" />
             <simulationdomain comment="Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)">
-                <posmin x="-1.05" y="default" z="1.05" comment="make sure to check the flap geometry to know how far it can reach in the x,z directions" />
+                <posmin x="-1.05" y="default" z="1.05" comment="e.g.: x=0.5, y=default-1, z=default-10%" />
                 <posmax x="default" y="default" z="default + 10%" />
             </simulationdomain>
         </parameters>
-        <particles np="429661" nb="19900" nbf="17450" mkboundfirst="3" mkfluidfirst="1">
+        <particles np="444263" nb="34502" nbf="29700" mkboundfirst="3" mkfluidfirst="1">
             <_summary>
                 <positions units_comment="metres (m)">
                     <posmin x="0" y="0" z="0" />
                     <posmax x="5.98" y="0.98" z="0.98" />
                 </positions>
-                <fixed count="17450" id="0-17449" mkcount="1" mkvalues="4" />
-                <moving count="2450" id="17450-19899" mkcount="1" mkvalues="3" />
-                <fluid count="409761" id="19900-429660" mkcount="2" mkvalues="1-2" />
+                <fixed count="29700" id="0-29699" mkcount="1" mkvalues="4" />
+                <moving count="4802" id="29700-34501" mkcount="1" mkvalues="3" />
+                <fluid count="409761" id="34502-444262" mkcount="2" mkvalues="1-2" />
             </_summary>
-            <fixed mkbound="1" mk="4" begin="0" count="17450" />
-            <moving mkbound="0" mk="3" begin="17450" count="2450" refmotion="0" />
-            <fluid mkfluid="0" mk="1" begin="19900" count="353925" />
-            <fluid mkfluid="1" mk="2" begin="373825" count="55836" />
+            <fixed mkbound="1" mk="4" begin="0" count="29700" />
+            <moving mkbound="0" mk="3" begin="29700" count="4802" refmotion="0" />
+            <fluid mkfluid="0" mk="1" begin="34502" count="353925" />
+            <fluid mkfluid="1" mk="2" begin="388427" count="55836" />
         </particles>
         <constants>
             <data2d value="false" />
