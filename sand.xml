@@ -39,6 +39,8 @@
                 <mainlist>
                     <setshapemode>real | dp | bound</setshapemode>
                     <setdrawmode mode="full" />
+
+
                     <!-- Flap wavemaker (moving boundary, mk=0) -->
                     <setmkbound mk="0" />
                     <drawbox>
@@ -47,35 +49,20 @@
                         <size x="0.02" y="1" z="1" />
                         <!-- thin plate at x=0 that spans full width and water depth-->
                     </drawbox>
+
+
                     <!-- ================   -->
                     <!-- Tank bounds (fixed boundary, mk=1) -->
                     <setmkbound mk="1" />
-                    <!-- Floor -->
                     <drawbox>
-                        <boxfill>solid</boxfill>
+                        <boxfill>bottom | right | front | back</boxfill>
                         <point x="0" y="0" z="0" />
-                        <size x="6" y="1" z="0.02" />
+                        <size x="6" y="1" z="1" />
                     </drawbox>
-                    <!-- Back wall -->
-                    <drawbox>
-                        <boxfill>solid</boxfill>
-                        <point x="5.98" y="0" z="0" />
-                        <size x="0.02" y="1" z="1" />
-                    </drawbox>
-                    <!-- side wall 1 (y=0) -->
-                    <drawbox>
-                        <boxfill>solid</boxfill>
-                        <point x="0" y="0" z="0" />
-                        <size x="6" y="0.02" z="1" />
-                    </drawbox>
-                    <!-- side wall 2 (y=1) -->
-                    <drawbox>
-                        <boxfill>solid</boxfill>
-                        <point x="0" y="0.98" z="0" />
-                        <size x="6" y="0.02" z="1" />
-                    </drawbox>
+
+
                     <!-- ================   -->
-                    <!-- Water (fluid, mk=1) -->
+                    <!-- Water (fluid, mk=0) -->
                     <setshapemode>real | dp | fluid</setshapemode>
                     <setmkfluid mk="0" />
                     <drawbox>
@@ -84,7 +71,7 @@
                         <size x="5.92" y="0.92" z="0.92" />
                     </drawbox>
                     <!--  ================   -->
-                    <!-- Sand (fluid, mk=2) -->
+                    <!-- Sand (fluid, mk=1) -->
                     <setshapemode>real | dp | fluid</setshapemode>
                     <setmkfluid mk="1" />
                     <drawbox>
@@ -116,7 +103,7 @@
                     <duration value="0" comment="Movement duration, Zero is the end of simulation (default=0)" />
                     <!-- sets hing at bottom (z=0) -->
                     <depth value="0.6" comment="Water depth (default=0)" />
-                    <variabledraft value="0.0" comment="Position of the wavemaker hinge (above the bottom <0; below the bottom >0) (default=0)" />
+                    <variabledraft value="0.0" comment="Position of the wavemaker hinge (above the bottom less than 0; below the bottom greater than 0) (default=0)" />
                     <!-- rotation of hinge along Y -->
                     <flapaxis0 x="0.02" y="0" z="0.0" comment="chnged from -1 to 0 so it stays within domain of the sim" />
                     <flapaxis1 x="0.02" y="1" z="0.0" comment="Point 1 of axis rotation" />

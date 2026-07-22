@@ -28,7 +28,7 @@
         <!-- ===== GEOMETRY: Square Prism Tank ===== -->
         <!-- Tank: 6m long, 1m wide, 1m tall         -->
         <!-- Water depth: 0.6m                       -->
-        <!-- dp=0.02 gives ~30 particles per meter   -->
+        <!-- dp=0.02 gives ~50 particles per meter   -->
         <geometry>
             <definition dp="0.02">
                 <pointref x="0" y="0" z="0" />
@@ -39,6 +39,8 @@
                 <mainlist>
                     <setshapemode>real | dp | bound</setshapemode>
                     <setdrawmode mode="full" />
+
+
                     <!-- Flap wavemaker (moving boundary, mk=0) -->
                     <setmkbound mk="0" />
                     <drawbox>
@@ -47,25 +49,31 @@
                         <size x="0.02" y="1" z="1" />
                         <!-- thin plate at x=0 that spans full width and water depth-->
                     </drawbox>
+
+
                     <!-- ================   -->
                     <!-- Tank bounds (fixed boundary, mk=1) -->
                     <!-- Tank size 6m x 1m x 1m -->
                     <setmkbound mk="1" />
                     <!-- Floor -->
                     <drawbox>
-                        <boxfill>bottom | left | right | back</boxfill>
+                        <boxfill>bottom | front | right | back</boxfill>
                         <point x="0" y="0" z="0" />
                         <size x="6" y="1" z="1" />
                     </drawbox>
+
+
                     <!--  ================   -->
                     <!-- Sand (fluid, mk=1) -->
                     <setshapemode>real | dp | fluid</setshapemode>
                     <setmkfluid mk="1" />
                     <drawbox>
                         <boxfill>solid</boxfill>
-                        <point x="2.013" y="0.04" z="0.04" />
-                        <size x="3.947" y="0.92" z="0.10" />
+                        <point x="2.02" y="0.04" z="0.04" />
+                        <size x="3.94" y="0.92" z="0.10" />
                     </drawbox>
+
+
                     <!-- ================   -->
                     <!-- Water (fluid, mk=0) -->
                     <setshapemode>real | dp | fluid</setshapemode>
@@ -99,7 +107,7 @@
                     <duration value="0" comment="Movement duration, Zero is the end of simulation (default=0)" />
                     <!-- sets hing at bottom (z=0) -->
                     <depth value="0.6" comment="Water depth (default=0)" />
-                    <variabledraft value="0.0" comment="Position of the wavemaker hinge (above the bottom <0; below the bottom >0) (default=0)" />
+                    <variabledraft value="0.0" comment="Position of the wavemaker hinge (above the bottom less than 0; below the bottom greater than 0) (default=0)" />
                     <!-- rotation of hinge along Y -->
                     <flapaxis0 x="0.02" y="0" z="0.0" comment="chnged from -1 to 0 so it stays within domain of the sim" />
                     <flapaxis1 x="0.02" y="1" z="0.0" comment="Point 1 of axis rotation" />
@@ -160,7 +168,7 @@
             <parameter key="RhopOutMin" value="700" comment="Minimum rhop valid (default=700)" units_comment="kg/m^3" />
             <parameter key="RhopOutMax" value="1900" comment="Maximum rhop valid (default=1300)" units_comment="kg/m^3" />
             <simulationdomain comment="Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)">
-                <posmin x="-0.05" y="default" z="default" comment="e.g.: x=0.5, y=default-1, z=default-10%" />
+                <posmin x="-1.05" y="default" z="1.05" comment="make sure to check the flap geometry to know how far it can reach in the x,z directions" />
                 <posmax x="default" y="default" z="default + 10%" />
             </simulationdomain>
         </parameters>
