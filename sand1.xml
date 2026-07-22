@@ -43,7 +43,7 @@
                     <setmkbound mk="0" />
                     <drawbox>
                         <boxfill>solid</boxfill>
-                        <point x="0" y="0" z="0" />
+                        <point x="0.02" y="0" z="0" />
                         <size x="0.02" y="1" z="1" />
                         <!-- thin plate at x=0 that spans full width and water depth-->
                     </drawbox>
@@ -101,8 +101,8 @@
                     <depth value="0.6" comment="Water depth (default=0)" />
                     <variabledraft value="0.0" comment="Position of the wavemaker hinge (above the bottom <0; below the bottom >0) (default=0)" />
                     <!-- rotation of hinge along Y -->
-                    <flapaxis0 x="0" y="0" z="0.0" comment="chnged from -1 to 0 so it stays within domain of the sim" />
-                    <flapaxis1 x="0" y="1" z="0.0" comment="Point 1 of axis rotation" />
+                    <flapaxis0 x="0.02" y="0" z="0.0" comment="chnged from -1 to 0 so it stays within domain of the sim" />
+                    <flapaxis1 x="0.02" y="1" z="0.0" comment="Point 1 of axis rotation" />
                     <!-- Wave parameters -->
                     <waveheight value="0.15" comment="Wave height" />
                     <waveperiod value="2" comment="Wave period" />
@@ -160,7 +160,7 @@
             <parameter key="RhopOutMin" value="700" comment="Minimum rhop valid (default=700)" units_comment="kg/m^3" />
             <parameter key="RhopOutMax" value="1900" comment="Maximum rhop valid (default=1300)" units_comment="kg/m^3" />
             <simulationdomain comment="Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)">
-                <posmin x="default" y="default" z="default" comment="e.g.: x=0.5, y=default-1, z=default-10%" />
+                <posmin x="-0.05" y="default" z="default" comment="e.g.: x=0.5, y=default-1, z=default-10%" />
                 <posmax x="default" y="default" z="default + 10%" />
             </simulationdomain>
         </parameters>
