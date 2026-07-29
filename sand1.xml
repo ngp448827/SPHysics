@@ -32,8 +32,8 @@
         <geometry>
             <definition dp="0.02">
                 <pointref x="0" y="0" z="0" />
-                <pointmin x="0" y="0" z="0" />
-                <pointmax x="6" y="1" z="1" />
+                <pointmin x="-0.06" y="-0.06" z="-0.06" />
+                <pointmax x="6.06" y="1.06" z="1" />
             </definition>
             <commands>
                 <mainlist>
@@ -47,16 +47,41 @@
                         <size x="0.02" y="1" z="1" />
                         <!-- thin plate at x=0 that spans full width and water depth-->
                     </drawbox>
+
+
                     <!-- ================   -->
                     <!-- Tank bounds (fixed boundary, mk=1) -->
                     <!-- Tank size 6m x 1m x 1m -->
                     <setmkbound mk="1" />
-                    <!-- Floor -->
+                    <!-- FLOOR -->
                     <drawbox>
-                        <boxfill>bottom | front | right | back</boxfill>
-                        <point x="0" y="0" z="0" />
-                        <size x="6" y="1" z="1" />
+                        <boxfill>solid</boxfill>
+                        <point x="0" y="-0.06" z="-0.06" />
+                        <size x="6.06" y="1.12" z="0.06" />
                     </drawbox>
+
+                    <!-- SIDE WALL (-Y) -->
+                    <drawbox>
+                        <boxfill>solid</boxfill>
+                        <point x="0" y="-0.06" z="0" />
+                        <size x="6.06" y="0.06" z="1" />
+                    </drawbox>
+
+                    <!-- SIDE WALL (+Y) -->
+                    <drawbox>
+                        <boxfill>solid</boxfill>
+                        <point x="0" y="1.00" z="0" />
+                        <size x="6.06" y="0.06" z="1" />
+                    </drawbox>
+
+                    <!-- END WALL -->
+                    <drawbox>
+                        <boxfill>solid</boxfill>
+                        <point x="6.00" y="-0.06" z="0" />
+                        <size x="0.06" y="1.12" z="1" />
+                    </drawbox>
+
+
                     <!--  ================   -->
                     <!-- Sand (fluid, mk=1) -->
                     <setshapemode>real | dp | fluid</setshapemode>
@@ -160,10 +185,14 @@
             <parameter key="PartsOutMax" value="1" comment="**DEPRECATED** %/100 of fluid particles allowed to be excluded from domain (default=1)" units_comment="decimal" />
             <parameter key="RhopOutMin" value="700" comment="Minimum rhop valid (default=700)" units_comment="kg/m^3" />
             <parameter key="RhopOutMax" value="1900" comment="Maximum rhop valid (default=1300)" units_comment="kg/m^3" />
-            <simulationdomain comment="Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)">
-                <posmin x="-1.05" y="default" z="-1.05" comment="e.g.: x=0.5, y=default-1, z=default-10%" />
-                <posmax x="default" y="default" z="default + 10%" />
+            
+            
+            <simulationdomain comment="default=Uses minimum and maximum position of the generated particles">
+                <posmin x="-1.05" y="default-0.10" z="-1.05" />
+                <posmax x="default+0.10" y="default+0.10" z="default+10%" />
             </simulationdomain>
+        
+        
         </parameters>
         <particles np="444263" nb="34502" nbf="29700" mkboundfirst="3" mkfluidfirst="1">
             <_summary>
