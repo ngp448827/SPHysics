@@ -71,11 +71,11 @@
                     <!-- Water (fluid, mk=0) -->
                     <setshapemode>real | dp | fluid</setshapemode>
                     <setmkfluid mk="0" />
-                    <drawbox>
-                        <boxfill>solid</boxfill>
+                    <fillbox>
+                        <modefill>void</modefill>
                         <point x="0.04" y="0" z="0.04" />
                         <size x="5.92" y="0" z="0.56" />
-                    </drawbox>
+                    </fillbox> 
                     <shapeout file="" reset="true" />
                 </mainlist>
             </commands>
