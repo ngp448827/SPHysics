@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<case app="GenCase v5.4.354.01 (07-04-2025)" date="20-07-2026 10:25:06">
+<case app="GenCase v5.4.354.01 (07-04-2025)" date="30-07-2026 13:55:13">
     <casedef>
         <!-- ===CONSTANTS=== -->
         <constantsdef>
@@ -58,29 +58,26 @@
                         <point x="5.98" y="0" z="0" />
                         <size x="0.02" y="0" z="1" />
                     </drawbox>
-                    
-                <!-- ======================== -->
-                <!-- FLOATING FIXED FLOOR FOR SAND -->
-                <drawbox> 
-                    <boxfill>solid</boxfill> 
-                    <point x="2.5" y="0" z="0.25" /> 
-                    <size x="2.5" y="0" z="0.02" />
-                </drawbox> 
-
+                    <!-- ======================== -->
+                    <!-- FLOATING FIXED FLOOR FOR SAND -->
+                    <drawbox>
+                        <boxfill>solid</boxfill>
+                        <point x="2.5" y="0" z="0.25" />
+                        <size x="2.5" y="0" z="0.02" />
+                    </drawbox>
                     <!-- ================   -->
                     <!-- Water (fluid, mk=0) -->
                     <setshapemode>real | dp | fluid</setshapemode>
                     <setmkfluid mk="0" />
-                    <fillbox x="0.04" y="0" z="0.04">
+                    <fillbox x="0.06" y="0" z="0.04">
                         <modefill>void</modefill>
-                        <point x="0.04" y="0" z="0.04" />
+                        <point x="0.06" y="0" z="0.04" />
                         <size x="5.92" y="0" z="0.56" />
-                    </fillbox> 
+                    </fillbox>
                     <shapeout file="" reset="true" />
                 </mainlist>
             </commands>
         </geometry>
-
         <!-- Motion block for wave paddle -->
         <motion>
             <objreal ref="0">
@@ -89,8 +86,6 @@
             </objreal>
         </motion>
     </casedef>
-
-
     <!-- ===EXECUTION=== -->
     <execution>
         <special>
@@ -137,10 +132,8 @@
             <parameter key="DtFixed" value="0" comment="Fixed Dt value. Use 0 to disable (default=disabled)" units_comment="seconds" />
             <parameter key="DtFixedFile" value="NONE" comment="Dt values are loaded from file. Use NONE to disable (default=disabled)" units_comment="milliseconds (ms)" />
             <parameter key="DtAllParticles" value="0" comment="Velocity of particles used to calculate DT. 1:All, 0:Only fluid/floating (default=0)" />
-            <!--TIME -->
             <parameter key="TimeMax" value="10" comment="Time of simulation" units_comment="seconds" />
             <parameter key="TimeOut" value="0.05" comment="Time out data" units_comment="seconds" />
-            <!--======-->
             <parameter key="PartsOutMax" value="1" comment="**DEPRECATED** %/100 of fluid particles allowed to be excluded from domain (default=1)" units_comment="decimal" />
             <parameter key="RhopOutMin" value="700" comment="Minimum rhop valid (default=700)" units_comment="kg/m^3" />
             <parameter key="RhopOutMax" value="1300" comment="Maximum rhop valid (default=1300)" units_comment="kg/m^3" />
@@ -149,31 +142,30 @@
                 <posmax x="default" y="default" z="default + 10%" />
             </simulationdomain>
         </parameters>
-        <particles np="484779" nb="79968" nbf="75456" mkboundfirst="10" mkfluidfirst="1">
+        <particles np="996" nb="996" nbf="900" mkboundfirst="2" mkfluidfirst="1">
             <_summary>
                 <positions units_comment="metres (m)">
                     <posmin x="0" y="0" z="0" />
-                    <posmax x="5.98" y="0.98" z="0.98" />
+                    <posmax x="5.98" y="0" z="0.98" />
                 </positions>
-                <fixed count="75456" id="0-75455" mkcount="1" mkvalues="21" />
-                <moving count="4512" id="75456-79967" mkcount="1" mkvalues="20" />
-                <fluid count="404811" id="79968-484778" mkcount="1" mkvalues="2" />
+                <fixed count="900" id="0-899" mkcount="1" mkvalues="3" />
+                <moving count="96" id="900-995" mkcount="1" mkvalues="2" />
             </_summary>
-            <fixed mkbound="11" mk="21" begin="0" count="75456" />
-            <moving mkbound="10" mk="20" begin="75456" count="4512" refmotion="0" />
-            <fluid mkfluid="1" mk="2" begin="79968" count="404811" />
+            <fixed mkbound="1" mk="3" begin="0" count="900" />
+            <moving mkbound="0" mk="2" begin="900" count="96" refmotion="0" />
         </particles>
         <constants>
-            <data2d value="false" />
+            <data2d value="true" />
+            <data2dposy value="0" units_comment="metres (m)" />
             <gravity x="0" y="0" z="-9.81" units_comment="m/s^2" />
             <cflnumber value="0.2" />
             <gamma value="7" />
             <rhop0 value="1000" units_comment="kg/m^3" />
             <dp value="0.02" units_comment="metres (m)" />
-            <h value="0.041569219382" units_comment="metres (m)" />
-            <b value="313920" units_comment="Pascal (Pa)" />
-            <massbound value="0.008" units_comment="kg" />
-            <massfluid value="0.008" units_comment="kg" />
+            <h value="0.033941125497" units_comment="metres (m)" />
+            <b value="0" units_comment="Pascal (Pa)" />
+            <massbound value="0.4" units_comment="kg" />
+            <massfluid value="0.4" units_comment="kg" />
         </constants>
         <uservars>
             <varnum name="VResId" value="0" />
@@ -184,9 +176,9 @@
                 <mvnull id="1" />
             </objreal>
         </motion>
-        <vtkout mkboundfirst="10" mkfluidfirst="1">
-            <vtkfile name="optimized_2__Dp.vtk" mk="2,20-21" mkbound="10-11" mkfluid="1" />
-            <vtkfile name="optimized_2__Actual.vtk" mk="2,20-21" mkbound="10-11" mkfluid="1" />
+        <vtkout mkboundfirst="2" mkfluidfirst="1">
+            <vtkfile name="2Dns__Dp.vtk" mk="2-3" mkbound="0-1" />
+            <vtkfile name="2Dns__Actual.vtk" mk="2-3" mkbound="0-1" />
         </vtkout>
     </execution>
 </case>
