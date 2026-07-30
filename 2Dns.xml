@@ -141,7 +141,7 @@
             <parameter key="RhopOutMax" value="1300" comment="Maximum rhop valid (default=1300)" units_comment="kg/m^3" />
             <!--SIM DOMAIN-->
             <simulationdomain comment="Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)">
-                <posmin x="-0.15" y="default" z="default"  />
+                <posmin x="-1.02" y="default" z="-1.02"  />
                 <posmax x="default" y="default" z="default + 10%" />
             </simulationdomain>
             <!--==============-->
