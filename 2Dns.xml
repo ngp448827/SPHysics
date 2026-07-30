@@ -71,7 +71,7 @@
                     <!-- Water (fluid, mk=0) -->
                     <setshapemode>real | dp | fluid</setshapemode>
                     <setmkfluid mk="0" />
-                    <fillbox>
+                    <fillbox x="0.04" y="0" z="0.04">
                         <modefill>void</modefill>
                         <point x="0.04" y="0" z="0.04" />
                         <size x="5.92" y="0" z="0.56" />
