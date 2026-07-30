@@ -24,7 +24,7 @@
         <!-- ===== GEOMETRY: Square Prism Tank ===== -->
         <!-- Tank: 6m long, 1m wide, 1m tall         -->
         <!-- Water depth: 0.6m                       -->
-        <!-- dp=0.02 gives ~30 particles per meter   -->
+        <!-- dp=0.02 gives ~50 particles per meter   -->
         <geometry>
             <definition dp="0.02">
                 <pointref x="0" y="0" z="0" />
@@ -105,10 +105,10 @@
                     <duration value="0" comment="Movement duration, Zero is the end of simulation (default=0)" />
                     <!-- sets hing at bottom (z=0) -->
                     <depth value="0.6" comment="Water depth (default=0)" />
-                    <variabledraft value="0.0" comment="Position of the wavemaker hinge (above the bottom <0; below the bottom >0) (default=0)" />
+                    <variabledraft value="0.0" comment="Position of the wavemaker hinge (above the bottom lt 0; below the bottom gt 0) (default=0)" />
                     <!-- rotation of hinge along Y -->
-                    <flapaxis0 x="0.05" y="0" z="0.0" comment="chnged from -1 to 0 so it stays within domain of the sim" />
-                    <flapaxis1 x="0.05" y="1" z="0.0" comment="Point 1 of axis rotation" />
+                    <flapaxis0 x="0.03" y="0" z="0.0" comment="chnged from -1 to 0 so it stays within domain of the sim" />
+                    <flapaxis1 x="0.03" y="1" z="0.0" comment="Point 1 of axis rotation" />
                     <!-- Wave parameters -->
                     <waveheight value="0.15" comment="Wave height" />
                     <waveperiod value="2" comment="Wave period" />
