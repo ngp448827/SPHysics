@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<case app="GenCase v5.4.354.01 (07-04-2025)" date="30-07-2026 13:55:13">
+<case app="GenCase v5.4.354.01 (07-04-2025)" date="30-07-2026 13:57:59">
     <casedef>
         <!-- ===CONSTANTS=== -->
         <constantsdef>
@@ -69,10 +69,10 @@
                     <!-- Water (fluid, mk=0) -->
                     <setshapemode>real | dp | fluid</setshapemode>
                     <setmkfluid mk="0" />
-                    <fillbox x="0.06" y="0" z="0.04">
+                    <fillbox x="0.10" y="0" z="0.10s">
                         <modefill>void</modefill>
-                        <point x="0.06" y="0" z="0.04" />
-                        <size x="5.92" y="0" z="0.56" />
+                        <point x="0.04" y="0" z="0.04" />
+                        <size x="5.92" y="0" z="0.64" />
                     </fillbox>
                     <shapeout file="" reset="true" />
                 </mainlist>
