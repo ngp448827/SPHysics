@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<case app="GenCase v5.4.354.01 (07-04-2025)" date="30-07-2026 14:13:07">
+<case app="GenCase v5.4.354.01 (07-04-2025)" date="30-07-2026 14:16:28">
     <casedef>
         <!-- ===CONSTANTS=== -->
         <constantsdef>
@@ -142,7 +142,7 @@
                 <posmax x="default" y="default" z="default + 10%" />
             </simulationdomain>
         </parameters>
-        <particles np="996" nb="996" nbf="900" mkboundfirst="2" mkfluidfirst="1">
+        <particles np="9889" nb="996" nbf="900" mkboundfirst="2" mkfluidfirst="1">
             <_summary>
                 <positions units_comment="metres (m)">
                     <posmin x="0" y="0" z="0" />
@@ -150,9 +150,11 @@
                 </positions>
                 <fixed count="900" id="0-899" mkcount="1" mkvalues="3" />
                 <moving count="96" id="900-995" mkcount="1" mkvalues="2" />
+                <fluid count="8893" id="996-9888" mkcount="1" mkvalues="1" />
             </_summary>
             <fixed mkbound="1" mk="3" begin="0" count="900" />
             <moving mkbound="0" mk="2" begin="900" count="96" refmotion="0" />
+            <fluid mkfluid="0" mk="1" begin="996" count="8893" />
         </particles>
         <constants>
             <data2d value="true" />
@@ -163,7 +165,7 @@
             <rhop0 value="1000" units_comment="kg/m^3" />
             <dp value="0.02" units_comment="metres (m)" />
             <h value="0.033941125497" units_comment="metres (m)" />
-            <b value="0" units_comment="Pascal (Pa)" />
+            <b value="336342.85714" units_comment="Pascal (Pa)" />
             <massbound value="0.4" units_comment="kg" />
             <massfluid value="0.4" units_comment="kg" />
         </constants>
