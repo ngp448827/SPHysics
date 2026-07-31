@@ -72,7 +72,7 @@
                     <fillbox x="0.10" y="0" z="0.10">
                         <modefill>void</modefill>
                         <point x="0.04" y="-1" z="0.04" />
-                        <size x="5.92" y="2" z="0.64" />
+                        <size x="5.92" y="2" z="2.04" />
                     </fillbox>
                     <shapeout file="" reset="true" />
                 </mainlist>
