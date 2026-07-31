@@ -62,7 +62,7 @@
                     <!-- FLOATING FIXED FLOOR FOR SAND -->
                     <drawbox>
                         <boxfill>solid</boxfill>
-                        <point x="2.5" y="0" z="0.25" />
+                        <point x="2.5" y="0" z="0.75" />
                         <size x="2.5" y="0" z="0.02" />
                     </drawbox>
                     <!-- ================   -->
