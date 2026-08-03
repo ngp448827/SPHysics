@@ -59,12 +59,29 @@
                         <size x="0.02" y="0" z="3" />
                     </drawbox>
                     <!-- ======================== -->
-                    <!-- FLOATING FIXED FLOOR FOR SAND -->
+                    <!-- FLOATING FIXED BOUNDARIES FOR SAND -->
+                        <!--FLOOR-->
                     <drawbox>
                         <boxfill>solid</boxfill>
                         <point x="2.5" y="0" z="0.75" />
                         <size x="2.5" y="0" z="0.02" />
                     </drawbox>
+                        <!--Cylinder supports-->
+                    <drawcylinder radius="0.365">
+                        <point x="2.865" y="-0.01" z="0.385" />
+                        <point x="2.865" y="0.01" z="0.385" />
+                    </drawcylinder>
+
+                    <drawcylinder radius="0.365">
+                        <point x="3.750" y="-0.01" z="0.385" />
+                        <point x="3.750" y="0.01" z="0.385" />
+                    </drawcylinder>
+
+                    <drawcylinder radius="0.365">
+                        <point x="4.635" y="-0.01" z="0.385" />
+                        <point x="4.635" y="0.01" z="0.385" />
+                    </drawcylinder>
+                    
                     <!-- ================   -->
                     <!-- Water (fluid, mk=0) -->
                     <setshapemode>real | dp | bound</setshapemode>
