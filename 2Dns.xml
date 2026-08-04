@@ -29,7 +29,7 @@
             <definition dp="0.02">
                 <pointref x="0" y="0" z="0" />
                 <pointmin x="0" y="0" z="0" />
-                <pointmax x="6" y="0" z="3" />
+                <pointmax x="12" y="0" z="3" />
             </definition>
             <commands>
                 <mainlist>
