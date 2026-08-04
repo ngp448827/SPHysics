@@ -73,13 +73,8 @@
                     </drawcylinder>
 
                     <drawcylinder radius="0.365">
-                        <point x="3.750" y="-0.01" z="0.385" />
-                        <point x="3.750" y="0.01" z="0.385" />
-                    </drawcylinder>
-
-                    <drawcylinder radius="0.365">
-                        <point x="4.635" y="-0.01" z="0.385" />
-                        <point x="4.635" y="0.01" z="0.385" />
+                        <point x="7.135" y="-0.01" z="0.385" />
+                        <point x="7.135" y="0.01" z="0.385" />
                     </drawcylinder>
                     
                     <!-- ================   -->
