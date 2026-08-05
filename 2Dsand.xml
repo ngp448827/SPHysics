@@ -17,8 +17,9 @@
         <!-- ===== MK CONFIG =====                    -->
         <!-- mk=0: Flap wavemaker (moving boundary)  -->
         <!-- mk=1: Tank walls/floor (fixed boundary) -->
-        <!-- mk=0:  Fluid (water)                     -->
-        <mkconfig boundcount="2" fluidcount="1">
+        <!-- mk=1:  Fluid (water)                     -->
+        <!-- mk=0:  Fluid (sand)                     -->
+        <mkconfig boundcount="2" fluidcount="2">
             <mkorientfluid mk="0" orient="Xyz" />
         </mkconfig>
         <!-- ===== GEOMETRY: 2D Tank ===== -->
@@ -63,24 +64,41 @@
                         <!--FLOOR-->
                     <drawbox>
                         <boxfill>solid</boxfill>
-                        <point x="2.5" y="0" z="0.75" />
-                        <size x="5" y="0" z="0.02" />
+                        <point x="6" y="0" z="0.75" />
+                        <size x="4" y="0" z="0.02" />
                     </drawbox>
                         <!--Cylinder supports-->
                     <drawcylinder radius="0.365">
-                        <point x="2.865" y="-0.01" z="0.385" />
-                        <point x="2.865" y="0.01" z="0.385" />
+                        <point x="3.865" y="-0.01" z="0.385" />
+                        <point x="3.865" y="0.01" z="0.385" />
                     </drawcylinder>
 
                     <drawcylinder radius="0.365">
-                        <point x="7.135" y="-0.01" z="0.385" />
-                        <point x="7.135" y="0.01" z="0.385" />
+                        <point x="8.135" y="-0.01" z="0.385" />
+                        <point x="8.135" y="0.01" z="0.385" />
                     </drawcylinder>
                     
-                    <!-- ================   -->
-                    <!-- Water (fluid, mk=0) -->
-                    <setshapemode>real | dp | bound</setshapemode>
+
+                    <!-- ======================== --> 
+                    <!-- Sand mk=0 -->
                     <setmkfluid mk="0" />
+
+                    <drawtriangle>
+                        <point x="4.00" y="0" z="0.77" />
+                        <point x="6.00" y="0" z="0.77" />
+                        <point x="6.00" y="0" z="2.52" />
+                    </drawtriangle>
+
+                    <drawbox>
+                        <boxfill>solid</boxfill>
+                        <point x="6.00" y="0" z="0.77" />
+                        <size x="4.00" y="0" z="1.75" />
+                    </drawbox>
+
+                    <!-- ================   -->
+                    <!-- Water (fluid, mk=1) -->
+                    <setshapemode>real | dp | bound</setshapemode>
+                    <setmkfluid mk="1" />
                     <fillbox x="0.10" y="0" z="0.10">
                         <modefill>void</modefill>
                         <point x="0.04" y="-1" z="0.04" />
