@@ -140,7 +140,28 @@
                     <savemotion periods="20" periodsteps="20" xpos="3.0" zpos="-0.3" comment="Saves motion data. xpos and zpos are optional. zpos=-depth of the measuring point" />
                 </flap>
             </wavepaddles>
+
+            <nnfluid>
+                <viscomodel value="HerschelBulkley" />
+                <!-- Water (mk=1) -->
+                <phase mkfluid="1">
+                    <rho value="1000" />
+                    <visco value="1e-6" />
+                    <tau_yield value="0.0" />
+                    <HBP_m value="1.0" />
+                    <HBP_n value="1.0" />
+                </phase>
+                <!-- Sand (mk=0) -->
+                <phase mkfluid="0">
+                    <rho value="1600" />
+                    <visco value="0.1" />
+                    <tau_yield value="2" />
+                    <HBP_m value="0.5" />
+                    <HBP_n value="2" />
+                </phase>
+            </nnfluid>
         </special>
+
         <parameters>
             <parameter key="SavePosDouble" value="0" comment="Saves particle position using double precision (default=0)" />
             <parameter key="StepAlgorithm" value="2" comment="Step Algorithm 1:Verlet, 2:Symplectic (default=1)" />
