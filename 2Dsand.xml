@@ -61,10 +61,10 @@
                     <!--FLOOR-->
                     <drawbox>
                         <boxfill>solid</boxfill>
-                        <point x="6" y="0" z="0.72" />
-                        <size x="4" y="0" z="0.08" />
+                        <point x="6" y="0" z="0.16" />
+                        <size x="4" y="0" z="0.72" />
                     </drawbox>
-                    <!--Cylinder supports-->
+                    <!--Cylinder supports
                     <drawcylinder radius="0.36">
                         <point x="3.84" y="-0.04" z="0.36" />
                         <point x="3.84" y="0.04" z="0.36" />
@@ -73,19 +73,19 @@
                     <drawcylinder radius="0.36">
                         <point x="8.16" y="-0.04" z="0.36" />
                         <point x="8.16" y="0.04" z="0.36" />
-                    </drawcylinder>
+                    </drawcylinder> -->
                     <!-- ======================== -->
                     <!-- Sand mk=0 -->
                     <setmkfluid mk="0" />
                     <drawtriangle>
                         <point x="4.00" y="0" z="0.08" />
                         <point x="6.00" y="0" z="0.08" />
-                        <point x="6.00" y="0" z="0.80" />
+                        <point x="6.00" y="0" z="1.28" />
                     </drawtriangle>
                     <drawbox>
                         <boxfill>solid</boxfill>
                         <point x="6.00" y="0" z="0.80" />
-                        <size x="4.00" y="0" z="1.04" />
+                        <size x="4.00" y="0" z="0.48" />
                     </drawbox>
                     <!-- ================   -->
                     <!-- Water (fluid, mk=1) -->
