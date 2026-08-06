@@ -22,10 +22,9 @@
         <mkconfig boundcount="2" fluidcount="2">
             <mkorientfluid mk="0" orient="Xyz" />
         </mkconfig>
+
+
         <!-- ===== GEOMETRY: 2D Tank ===== -->
-        <!-- Tank: 6m long, 1m tall         -->
-        <!-- Water depth: 0.6m                       -->
-        <!-- dp=0.02 gives ~50 particles per meter   -->
         <geometry>
             <definition dp="0.02">
                 <pointref x="0" y="0" z="0" />
@@ -126,7 +125,7 @@
                     <start value="0" comment="Start time (default=0)" />
                     <duration value="0" comment="Movement duration, Zero is the end of simulation (default=0)" />
                     <!-- sets hing at bottom (z=0) -->
-                    <depth value="0.6" comment="Water depth (default=0)" />
+                    <depth value="2" comment="Water depth (default=0)" />
                     <variabledraft value="0.0" comment="Position of the wavemaker hinge (above the bottom lt 0; below the bottom gt 0) (default=0)" />
                     <!-- rotation of hinge along Y -->
                     <flapaxis0 x="0.03" y="0" z="0.0" comment="chnged from -1 to 0 so it stays within domain of the sim" />
@@ -189,7 +188,7 @@
             <!--====-->
             <parameter key="PartsOutMax" value="1" comment="**DEPRECATED** %/100 of fluid particles allowed to be excluded from domain (default=1)" units_comment="decimal" />
             <parameter key="RhopOutMin" value="700" comment="Minimum rhop valid (default=700)" units_comment="kg/m^3" />
-            <parameter key="RhopOutMax" value="1300" comment="Maximum rhop valid (default=1300)" units_comment="kg/m^3" />
+            <parameter key="RhopOutMax" value="1800" comment="Maximum rhop valid (default=1300)" units_comment="kg/m^3" />
             <!--SIM DOMAIN-->
             <simulationdomain comment="Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)">
                 <posmin x="-0.815" y="default" z="default - 10%"  />
