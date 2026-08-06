@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<case app="GenCase v5.4.354.01 (07-04-2025)" date="30-07-2026 14:16:28">
+<case app="GenCase v5.4.354.01 (07-04-2025)" date="06-08-2026 11:24:06">
     <casedef>
         <!-- ===CONSTANTS=== -->
         <constantsdef>
@@ -22,8 +22,6 @@
         <mkconfig boundcount="2" fluidcount="2">
             <mkorientfluid mk="0" orient="Xyz" />
         </mkconfig>
-
-
         <!-- ===== GEOMETRY: 2D Tank ===== -->
         <geometry>
             <definition dp="0.02">
@@ -60,40 +58,34 @@
                     </drawbox>
                     <!-- ======================== -->
                     <!-- FLOATING FIXED BOUNDARIES FOR SAND -->
-                        <!--FLOOR-->
+                    <!--FLOOR-->
                     <drawbox>
                         <boxfill>solid</boxfill>
                         <point x="6" y="0" z="0.75" />
                         <size x="4" y="0" z="0.02" />
                     </drawbox>
-                        <!--Cylinder supports-->
+                    <!--Cylinder supports-->
                     <drawcylinder radius="0.365">
                         <point x="3.865" y="-0.01" z="0.385" />
                         <point x="3.865" y="0.01" z="0.385" />
                     </drawcylinder>
-
                     <drawcylinder radius="0.365">
                         <point x="8.135" y="-0.01" z="0.385" />
                         <point x="8.135" y="0.01" z="0.385" />
                     </drawcylinder>
-                    
-
-                    <!-- ======================== --> 
+                    <!-- ======================== -->
                     <!-- Sand mk=0 -->
                     <setmkfluid mk="0" />
-
                     <drawtriangle>
                         <point x="4.00" y="0" z="0.77" />
                         <point x="6.00" y="0" z="0.77" />
                         <point x="6.00" y="0" z="2.52" />
                     </drawtriangle>
-
                     <drawbox>
                         <boxfill>solid</boxfill>
                         <point x="6.00" y="0" z="0.77" />
                         <size x="4.00" y="0" z="1.75" />
                     </drawbox>
-
                     <!-- ================   -->
                     <!-- Water (fluid, mk=1) -->
                     <setshapemode>real | dp | bound</setshapemode>
@@ -139,7 +131,6 @@
                     <savemotion periods="20" periodsteps="20" xpos="3.0" zpos="-0.3" comment="Saves motion data. xpos and zpos are optional. zpos=-depth of the measuring point" />
                 </flap>
             </wavepaddles>
-
             <nnfluid>
                 <viscomodel value="HerschelBulkley" />
                 <!-- Water (mk=1) -->
@@ -160,7 +151,6 @@
                 </phase>
             </nnfluid>
         </special>
-
         <parameters>
             <parameter key="SavePosDouble" value="0" comment="Saves particle position using double precision (default=0)" />
             <parameter key="StepAlgorithm" value="2" comment="Step Algorithm 1:Verlet, 2:Symplectic (default=1)" />
@@ -182,33 +172,30 @@
             <parameter key="DtFixed" value="0" comment="Fixed Dt value. Use 0 to disable (default=disabled)" units_comment="seconds" />
             <parameter key="DtFixedFile" value="NONE" comment="Dt values are loaded from file. Use NONE to disable (default=disabled)" units_comment="milliseconds (ms)" />
             <parameter key="DtAllParticles" value="0" comment="Velocity of particles used to calculate DT. 1:All, 0:Only fluid/floating (default=0)" />
-            <!--TIME-->
-            <parameter key="TimeMax" value="10"   />
+            <parameter key="TimeMax" value="10" />
             <parameter key="TimeOut" value="0.05" />
-            <!--====-->
             <parameter key="PartsOutMax" value="1" comment="**DEPRECATED** %/100 of fluid particles allowed to be excluded from domain (default=1)" units_comment="decimal" />
             <parameter key="RhopOutMin" value="700" comment="Minimum rhop valid (default=700)" units_comment="kg/m^3" />
             <parameter key="RhopOutMax" value="1800" comment="Maximum rhop valid (default=1300)" units_comment="kg/m^3" />
-            <!--SIM DOMAIN-->
             <simulationdomain comment="Defines domain of simulation (default=Uses minimum and maximum position of the generated particles)">
-                <posmin x="-0.815" y="default" z="default - 10%"  />
+                <posmin x="-0.815" y="default" z="default - 10%" comment="e.g.: x=0.5, y=default-1, z=default-10%" />
                 <posmax x="default" y="default" z="default + 10%" />
             </simulationdomain>
-            <!--==============-->
         </parameters>
-        <particles np="9889" nb="996" nbf="900" mkboundfirst="2" mkfluidfirst="1">
+        <particles np="54154" nb="3997" nbf="3701" mkboundfirst="3" mkfluidfirst="1">
             <_summary>
                 <positions units_comment="metres (m)">
                     <posmin x="0" y="0" z="0" />
-                    <posmax x="5.98" y="0" z="0.98" />
+                    <posmax x="11.98" y="0" z="2.98" />
                 </positions>
-                <fixed count="900" id="0-899" mkcount="1" mkvalues="3" />
-                <moving count="96" id="900-995" mkcount="1" mkvalues="2" />
-                <fluid count="8893" id="996-9888" mkcount="1" mkvalues="1" />
+                <fixed count="3701" id="0-3700" mkcount="1" mkvalues="4" />
+                <moving count="296" id="3701-3996" mkcount="1" mkvalues="3" />
+                <fluid count="50157" id="3997-54153" mkcount="2" mkvalues="1-2" />
             </_summary>
-            <fixed mkbound="1" mk="3" begin="0" count="900" />
-            <moving mkbound="0" mk="2" begin="900" count="96" refmotion="0" />
-            <fluid mkfluid="0" mk="1" begin="996" count="8893" />
+            <fixed mkbound="1" mk="4" begin="0" count="3701" />
+            <moving mkbound="0" mk="3" begin="3701" count="296" refmotion="0" />
+            <fluid mkfluid="0" mk="1" begin="3997" count="22124" />
+            <fluid mkfluid="1" mk="2" begin="26121" count="28033" />
         </particles>
         <constants>
             <data2d value="true" />
@@ -219,7 +206,7 @@
             <rhop0 value="1000" units_comment="kg/m^3" />
             <dp value="0.02" units_comment="metres (m)" />
             <h value="0.033941125497" units_comment="metres (m)" />
-            <b value="336342.85714" units_comment="Pascal (Pa)" />
+            <b value="1367794.2857" units_comment="Pascal (Pa)" />
             <massbound value="0.4" units_comment="kg" />
             <massfluid value="0.4" units_comment="kg" />
         </constants>
@@ -232,9 +219,9 @@
                 <mvnull id="1" />
             </objreal>
         </motion>
-        <vtkout mkboundfirst="2" mkfluidfirst="1">
-            <vtkfile name="2Dns__Dp.vtk" mk="2-3" mkbound="0-1" />
-            <vtkfile name="2Dns__Actual.vtk" mk="2-3" mkbound="0-1" />
+        <vtkout mkboundfirst="3" mkfluidfirst="1">
+            <vtkfile name="2Dsand__Dp.vtk" mk="3-4" mkbound="0-1" />
+            <vtkfile name="2Dsand__Actual.vtk" mk="3-4" mkbound="0-1" />
         </vtkout>
     </execution>
 </case>
