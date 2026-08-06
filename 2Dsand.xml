@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<case app="GenCase v5.4.354.01 (07-04-2025)" date="06-08-2026 11:24:06">
+<case app="GenCase v5.4.354.01 (07-04-2025)" date="06-08-2026 14:03:34">
     <casedef>
         <!-- ===CONSTANTS=== -->
         <constantsdef>
@@ -24,7 +24,7 @@
         </mkconfig>
         <!-- ===== GEOMETRY: 2D Tank ===== -->
         <geometry>
-            <definition dp="0.02">
+            <definition dp="0.08">
                 <pointref x="0" y="0" z="0" />
                 <pointmin x="0" y="0" z="0" />
                 <pointmax x="12" y="0" z="3" />
@@ -90,7 +90,7 @@
                     <!-- Water (fluid, mk=1) -->
                     <setshapemode>real | dp | bound</setshapemode>
                     <setmkfluid mk="1" />
-                    <fillbox x="0.10" y="0" z="0.10">
+                    <fillbox x="2.00" y="0" z="1.00">
                         <modefill>void</modefill>
                         <point x="0.04" y="-1" z="0.04" />
                         <size x="11.92" y="2" z="2.04" />
@@ -182,20 +182,19 @@
                 <posmax x="default" y="default" z="default + 10%" />
             </simulationdomain>
         </parameters>
-        <particles np="54154" nb="3997" nbf="3701" mkboundfirst="3" mkfluidfirst="1">
+        <particles np="1594" nb="125" nbf="52" mkboundfirst="3" mkfluidfirst="1">
             <_summary>
                 <positions units_comment="metres (m)">
                     <posmin x="0" y="0" z="0" />
-                    <posmax x="11.98" y="0" z="2.98" />
+                    <posmax x="10" y="0" z="2.88" />
                 </positions>
-                <fixed count="3701" id="0-3700" mkcount="1" mkvalues="4" />
-                <moving count="296" id="3701-3996" mkcount="1" mkvalues="3" />
-                <fluid count="50157" id="3997-54153" mkcount="2" mkvalues="1-2" />
+                <fixed count="52" id="0-51" mkcount="1" mkvalues="4" />
+                <moving count="73" id="52-124" mkcount="1" mkvalues="3" />
+                <fluid count="1469" id="125-1593" mkcount="1" mkvalues="1" />
             </_summary>
-            <fixed mkbound="1" mk="4" begin="0" count="3701" />
-            <moving mkbound="0" mk="3" begin="3701" count="296" refmotion="0" />
-            <fluid mkfluid="0" mk="1" begin="3997" count="22124" />
-            <fluid mkfluid="1" mk="2" begin="26121" count="28033" />
+            <fixed mkbound="1" mk="4" begin="0" count="52" />
+            <moving mkbound="0" mk="3" begin="52" count="73" refmotion="0" />
+            <fluid mkfluid="0" mk="1" begin="125" count="1469" />
         </particles>
         <constants>
             <data2d value="true" />
@@ -204,11 +203,11 @@
             <cflnumber value="0.2" />
             <gamma value="7" />
             <rhop0 value="1000" units_comment="kg/m^3" />
-            <dp value="0.02" units_comment="metres (m)" />
-            <h value="0.033941125497" units_comment="metres (m)" />
-            <b value="1367794.2857" units_comment="Pascal (Pa)" />
-            <massbound value="0.4" units_comment="kg" />
-            <massfluid value="0.4" units_comment="kg" />
+            <dp value="0.08" units_comment="metres (m)" />
+            <h value="0.13576450199" units_comment="metres (m)" />
+            <b value="986605.71429" units_comment="Pascal (Pa)" />
+            <massbound value="6.4" units_comment="kg" />
+            <massfluid value="6.4" units_comment="kg" />
         </constants>
         <uservars>
             <varnum name="VResId" value="0" />
