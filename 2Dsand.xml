@@ -37,8 +37,8 @@
                     <setmkbound mk="0" />
                     <drawbox>
                         <boxfill>solid</boxfill>
-                        <point x="0.02" y="0" z="0" />
-                        <size x="0.02" y="0" z="3" />
+                        <point x="0" y="0" z="0" />
+                        <size x="0.08" y="0" z="3" />
                         <!-- thin plate at x=0 that spans full width and water depth-->
                     </drawbox>
                     <!-- ================   -->
@@ -48,52 +48,53 @@
                     <drawbox>
                         <boxfill>solid</boxfill>
                         <point x="0" y="0" z="0" />
-                        <size x="12" y="0" z="0.02" />
+                        <size x="12" y="0" z="0.08" />
                     </drawbox>
                     <!-- Back wall -->
                     <drawbox>
                         <boxfill>solid</boxfill>
-                        <point x="11.98" y="0" z="0" />
-                        <size x="0.02" y="0" z="3" />
+                        <point x="11.92" y="0" z="0" />
+                        <size x="0.08" y="0" z="3" />
                     </drawbox>
                     <!-- ======================== -->
                     <!-- FLOATING FIXED BOUNDARIES FOR SAND -->
                     <!--FLOOR-->
                     <drawbox>
                         <boxfill>solid</boxfill>
-                        <point x="6" y="0" z="0.75" />
-                        <size x="4" y="0" z="0.02" />
+                        <point x="6" y="0" z="0.72" />
+                        <size x="4" y="0" z="0.08" />
                     </drawbox>
                     <!--Cylinder supports-->
-                    <drawcylinder radius="0.365">
-                        <point x="3.865" y="-0.01" z="0.385" />
-                        <point x="3.865" y="0.01" z="0.385" />
+                    <drawcylinder radius="0.36">
+                        <point x="3.84" y="-0.04" z="0.36" />
+                        <point x="3.84" y="0.04" z="0.36" />
                     </drawcylinder>
-                    <drawcylinder radius="0.365">
-                        <point x="8.135" y="-0.01" z="0.385" />
-                        <point x="8.135" y="0.01" z="0.385" />
+
+                    <drawcylinder radius="0.36">
+                        <point x="8.16" y="-0.04" z="0.36" />
+                        <point x="8.16" y="0.04" z="0.36" />
                     </drawcylinder>
                     <!-- ======================== -->
                     <!-- Sand mk=0 -->
                     <setmkfluid mk="0" />
                     <drawtriangle>
-                        <point x="4.00" y="0" z="0.77" />
-                        <point x="6.00" y="0" z="0.77" />
-                        <point x="6.00" y="0" z="2.52" />
+                        <point x="4.00" y="0" z="0.08" />
+                        <point x="6.00" y="0" z="0.08" />
+                        <point x="6.00" y="0" z="0.80" />
                     </drawtriangle>
                     <drawbox>
                         <boxfill>solid</boxfill>
-                        <point x="6.00" y="0" z="0.77" />
-                        <size x="4.00" y="0" z="1.75" />
+                        <point x="6.00" y="0" z="0.80" />
+                        <size x="4.00" y="0" z="1.04" />
                     </drawbox>
                     <!-- ================   -->
                     <!-- Water (fluid, mk=1) -->
                     <setshapemode>real | dp | bound</setshapemode>
                     <setmkfluid mk="1" />
-                    <fillbox x="2.00" y="0" z="1.00">
+                    <fillbox x="2.00" y="0" z="1.04">
                         <modefill>void</modefill>
-                        <point x="0.04" y="-1" z="0.04" />
-                        <size x="11.92" y="2" z="2.04" />
+                        <point x="0.08" y="-1" z="0.08" />
+                        <size x="11.84" y="2" z="1.92" />
                     </fillbox>
                     <shapeout file="" reset="true" />
                 </mainlist>
@@ -120,8 +121,8 @@
                     <depth value="2" comment="Water depth (default=0)" />
                     <variabledraft value="0.0" comment="Position of the wavemaker hinge (above the bottom lt 0; below the bottom gt 0) (default=0)" />
                     <!-- rotation of hinge along Y -->
-                    <flapaxis0 x="0.03" y="0" z="0.0" comment="chnged from -1 to 0 so it stays within domain of the sim" />
-                    <flapaxis1 x="0.03" y="1" z="0.0" comment="Point 1 of axis rotation" />
+                    <flapaxis0 x="0.04" y="0" z="0.0" comment="chnged from -1 to 0 so it stays within domain of the sim" />
+                    <flapaxis1 x="0.04" y="1" z="0.0" comment="Point 1 of axis rotation" />
                     <!-- Wave parameters -->
                     <waveheight value="0.15" comment="Wave height" />
                     <waveperiod value="2" comment="Wave period" />
